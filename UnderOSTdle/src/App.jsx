@@ -1,7 +1,5 @@
 import { useState } from "react";
-import heroImg from "./assets/hero.png";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "./assets/vite.svg";
+import SongNavigator from "./SongNavigator.jsx";
 import "./App.css";
 
 function App() {
@@ -9,6 +7,7 @@ function App() {
 
   return (
     <>
+      <SongNavigator />
       <section id="center">
         <div>
           <h1>UnderOSTdle</h1>
@@ -16,6 +15,10 @@ function App() {
             Connect the 2 Undertale/Deltarune songs using their shared Motifs!
           </p>
         </div>
+        <div>Songs to Connect:</div>
+        <div>THE WORLD REVOLVING</div>
+        <div>Spamton Neo Fight</div>
+        <input placeholder="Enter a song"></input>
       </section>
     </>
   );
