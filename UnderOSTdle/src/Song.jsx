@@ -3,7 +3,8 @@
  * @param {string[]} motifs - The motifs present in the song.
  */
 class Song {
-  constructor(name, motifs, url, game) {
+  constructor(id, name, motifs, url, game) {
+    this.id = id;
     this.name = name;
     this.motifs = motifs;
     this.visited = false;

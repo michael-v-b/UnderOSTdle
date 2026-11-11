@@ -14,10 +14,11 @@ const SongNavigator = () => {
         console.log("unable to initializeSongs");
         return;
       }
+      var songID = SongList[i].id;
       var songName = SongList[i].name;
       var songMotifs = SongList[i].motifs;
-      var songURL = SongList[i].songURL;
-      var songGame = SongList[i];
+      var songURL = SongList[i].url;
+      var songGame = SongList[i].game;
       // add new song to song librarby
       songLibrarby.set(
         songName,
