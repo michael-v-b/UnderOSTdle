@@ -10,10 +10,6 @@ const SongNavigator = () => {
   //initialize the songLibrarby and motifLibrarby functions
   function initializeSongs() {
     for (let i = 0; i < SongList.length; i++) {
-      if (SongList[i].length < SONG_ARRAY_SIZE) {
-        console.log("unable to initializeSongs");
-        return;
-      }
       var songID = SongList[i].id;
       var songName = SongList[i].name;
       var songMotifs = SongList[i].motifs;
@@ -22,7 +18,7 @@ const SongNavigator = () => {
       // add new song to song librarby
       songLibrarby.set(
         songName,
-        new Song(songName, songMotifs, songURL, songGame),
+        new Song(songID, songName, songMotifs, songURL, songGame),
       );
       for (let j = 0; j < songMotifs.length; j++) {
         var motif = songMotifs[j];
