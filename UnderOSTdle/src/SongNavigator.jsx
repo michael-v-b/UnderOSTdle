@@ -3,6 +3,8 @@ import SongList from "./SongList.jsx";
 const SongNavigator = () => {
   const songLibrarby = new Map();
   const motifsLibrarby = new Map();
+  var songPath;
+  var currentSong;
 
   //initialize the songLibrarby and motifLibrarby functions
   function initializeSongs() {
@@ -23,8 +25,52 @@ const SongNavigator = () => {
     }
   }
 
+  function navigateSongs(startSong, endSong) {
+    //break if start song is not present
+    if (!songLibrarby.has(startSong) || !songLibrarby.has(endSong)) {
+      console.log("has niether of the songs");
+      return null;
+    }
+    var path = new Map();
+    currentSong = songLibrarby.get(startSong);
+    currentSong.visited = true;
+    var songQueue = [songLibrarby.get(startSong)]; //contains song object and not song names
+    //loop through queue
+    while (songQueue.length > 0 && currentSong.name != endSong) {
+      currentSong = songQueue.shift();
+      //iterate through the song motifs
+      for (let i = 0; i < currentSong.motifs.length; i++) {
+        var motif = currentSong.motifs[i];
+        var songNamesWithMotif = motifsLibrarby.get(motif);
+        //iterate through songs with that motif
+        for (let j = 0; j < songNamesWithMotif.length; j++) {
+          var songWithMotif = songLibrarby.get(songNamesWithMotif[j]);
+          if (songWithMotif && songWithMotif.visited == false) {
+            songQueue.push(songWithMotif);
+            songWithMotif.visited = true;
+            path.set(songWithMotif.name, currentSong.name);
+          }
+        }
+      }
+    }
+
+    if (currentSong.name == endSong) {
+      return path;
+    } else {
+      return null;
+    }
+  }
+
   initializeSongs();
-  console.log(motifsLibrarby);
+
+  songPath = navigateSongs("Song 1", "Song 4");
+  currentSong = "Song 4";
+  console.log("Path: ");
+  console.log(songPath);
+  while (songPath && songPath.has(currentSong)) {
+    console.log(currentSong);
+    currentSong = songPath.get(currentSong);
+  }
 };
 
 export default SongNavigator;
