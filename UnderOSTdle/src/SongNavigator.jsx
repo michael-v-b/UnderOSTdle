@@ -5,14 +5,24 @@ const SongNavigator = () => {
   const motifsLibrarby = new Map();
   var selectedSongAndPath;
   var currentSong;
+  const SONG_ARRAY_SIZE = 4;
 
   //initialize the songLibrarby and motifLibrarby functions
   function initializeSongs() {
     for (let i = 0; i < SongList.length; i++) {
+      if (SongList[i].length < SONG_ARRAY_SIZE) {
+        console.log("unable to initializeSongs");
+        return;
+      }
       var songName = SongList[i][0];
       var songMotifs = SongList[i][1];
+      var songURL = SongList[i][2];
+      var songGame = SongList[i][3];
       // add new song to song librarby
-      songLibrarby.set(songName, new Song(songName, songMotifs));
+      songLibrarby.set(
+        songName,
+        new Song(songName, songMotifs, songURL, songGame),
+      );
       for (let j = 0; j < songMotifs.length; j++) {
         var motif = songMotifs[j];
         //if motif isn't present then add it, otherwise push song to end of motifs library
