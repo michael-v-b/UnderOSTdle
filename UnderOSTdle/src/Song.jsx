@@ -7,6 +7,7 @@ class Song {
     this.name = name;
     this.motifs = motifs;
     this.visited = false;
+    this.distance = 0;
   }
 }
 

@@ -3,7 +3,7 @@ import SongList from "./SongList.jsx";
 const SongNavigator = () => {
   const songLibrarby = new Map();
   const motifsLibrarby = new Map();
-  var songPath;
+  var selectedSongAndPath;
   var currentSong;
 
   //initialize the songLibrarby and motifLibrarby functions
@@ -25,19 +25,30 @@ const SongNavigator = () => {
     }
   }
 
-  function navigateSongs(startSong, endSong) {
+  //returns a random song that is that distance away
+  function findSongWithDistance(startSong, distance) {
     //break if start song is not present
-    if (!songLibrarby.has(startSong) || !songLibrarby.has(endSong)) {
+    if (!songLibrarby.has(startSong)) {
       console.log("has niether of the songs");
       return null;
     }
+
+    var currentDistance = 0;
     var path = new Map();
     currentSong = songLibrarby.get(startSong);
     currentSong.visited = true;
     var songQueue = [songLibrarby.get(startSong)]; //contains song object and not song names
+    var outputSongIndex = 0;
     //loop through queue
-    while (songQueue.length > 0 && currentSong.name != endSong) {
+    while (songQueue.length > 0 && currentDistance < distance) {
       currentSong = songQueue.shift();
+      currentDistance = currentSong.distance;
+      // if the queue reached a song of the desired distance,
+      // then all songs within that distance are present and the loop should break
+      if (currentDistance == distance) {
+        songQueue.push(currentSong);
+        break;
+      }
       //iterate through the song motifs
       for (let i = 0; i < currentSong.motifs.length; i++) {
         var motif = currentSong.motifs[i];
@@ -48,28 +59,34 @@ const SongNavigator = () => {
           if (songWithMotif && songWithMotif.visited == false) {
             songQueue.push(songWithMotif);
             songWithMotif.visited = true;
+            songWithMotif.distance = currentDistance + 1;
             path.set(songWithMotif.name, currentSong.name);
           }
         }
       }
     }
+    outputSongIndex = Math.floor(Math.random() * songQueue.length);
+    return [songQueue[outputSongIndex], path];
+  }
 
-    if (currentSong.name == endSong) {
-      return path;
-    } else {
-      return null;
+  //resets the visited and distance values for each song
+  function resetSongs() {
+    for (var songName of songLibrarby.keys()) {
+      var currentSong = songLibrarby.get(songName);
+      currentSong.visited = false;
+      currentSong.distance = 0;
     }
   }
 
   initializeSongs();
 
-  songPath = navigateSongs("Song 1", "Song 4");
-  currentSong = "Song 4";
-  console.log("Path: ");
-  console.log(songPath);
-  while (songPath && songPath.has(currentSong)) {
-    console.log(currentSong);
-    currentSong = songPath.get(currentSong);
+  selectedSongAndPath = findSongWithDistance("Song 1", 2);
+  resetSongs();
+  if (selectedSongAndPath[0]) {
+    console.log("selectedSong: ");
+    console.log(selectedSongAndPath);
+  } else {
+    console.log("no song found");
   }
 };
 
