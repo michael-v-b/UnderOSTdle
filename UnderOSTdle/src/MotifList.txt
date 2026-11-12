@@ -1,2 +1,7 @@
 This is just a list of the different motifs that will be used are and 
 what their naming conventions will be.
+
+1. Once Upon a Time
+2. Flowey
+3. Toriel
+4. Ruins

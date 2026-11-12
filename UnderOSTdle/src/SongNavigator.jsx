@@ -89,7 +89,7 @@ const SongNavigator = () => {
 
   selectedSongAndPath = findSongWithDistance("Song 1", 2);
   resetSongs();
-  if (selectedSongAndPath[0]) {
+  if (selectedSongAndPath != null) {
     console.log("selectedSong: ");
     console.log(selectedSongAndPath);
   } else {
