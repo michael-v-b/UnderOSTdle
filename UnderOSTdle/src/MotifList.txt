@@ -5,3 +5,20 @@ what their naming conventions will be.
 2. Flowey
 3. Toriel
 4. Ruins
+5. Home
+6. Determination
+7. Enemy Approaching
+8. Heartache
+9. Sans
+10. Ghost Fight
+11. Papyrus
+12. Snowdin
+13. Dog Song
+14. Don't Forget
+15. Hopes and Dreams
+16. Undyne
+17. Another Medium
+18. Dummy!
+19. Quiet
+20. Alphys
+21. Mettaton

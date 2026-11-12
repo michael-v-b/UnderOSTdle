@@ -87,7 +87,7 @@ const SongNavigator = () => {
 
   initializeSongs();
 
-  selectedSongAndPath = findSongWithDistance("Song 1", 2);
+  selectedSongAndPath = findSongWithDistance("Once Upon a Time", 1);
   resetSongs();
   if (selectedSongAndPath != null) {
     console.log("selectedSong: ");
