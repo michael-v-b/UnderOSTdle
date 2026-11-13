@@ -1,5 +1,6 @@
 import Song from "./Song.jsx";
-import SongList from "./SongList.jsx";
+import UndertaleList from "./UndertaleList.jsx";
+import DeltaList1 from "./DeltaList1.jsx";
 const SongNavigator = () => {
   const songLibrarby = new Map();
   const motifsLibrarby = new Map();
@@ -8,13 +9,13 @@ const SongNavigator = () => {
   const SONG_ARRAY_SIZE = 4;
 
   //initialize the songLibrarby and motifLibrarby functions
-  function initializeSongs() {
-    for (let i = 0; i < SongList.length; i++) {
-      var songID = SongList[i].id;
-      var songName = SongList[i].name;
-      var songMotifs = SongList[i].motifs;
-      var songURL = SongList[i].url;
-      var songGame = SongList[i].game;
+  function initializeSongs(list) {
+    for (let i = 0; i < list.length; i++) {
+      var songID = list[i].id;
+      var songName = list[i].name;
+      var songMotifs = list[i].motifs;
+      var songURL = list[i].url;
+      var songGame = list[i].game;
       // add new song to song librarby
       songLibrarby.set(
         songName,
@@ -85,7 +86,8 @@ const SongNavigator = () => {
     }
   }
 
-  initializeSongs();
+  initializeSongs(UndertaleList);
+  initializeSongs(DeltaList1);
 
   selectedSongAndPath = findSongWithDistance("Once Upon a Time", 1);
   resetSongs();

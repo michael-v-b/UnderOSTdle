@@ -1,4 +1,4 @@
-const SongList = [
+const UndertaleList = [
   {
     id: 1,
     name: "Once Upon A Time",
@@ -629,4 +629,4 @@ const SongList = [
   },
 ];
 
-export default SongList;
+export default UndertaleList;
