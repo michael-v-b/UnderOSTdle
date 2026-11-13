@@ -89,6 +89,7 @@ const SongNavigator = () => {
 
   selectedSongAndPath = findSongWithDistance("Once Upon a Time", 1);
   resetSongs();
+  console.log(motifsLibrarby);
   if (selectedSongAndPath != null) {
     console.log("selectedSong: ");
     console.log(selectedSongAndPath);
