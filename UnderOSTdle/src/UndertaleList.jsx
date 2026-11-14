@@ -527,7 +527,7 @@ const UndertaleList = [
   {
     id: 88,
     name: "Burn In Despair",
-    motifs: ["Your Best Nightmare", "Black Knife"],
+    motifs: ["Your Best Nightmare", "Burn In Despair"],
     url: "https://www.youtube.com/watch?v=HAnJX4uudqY&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=88",
     game: "U",
   },

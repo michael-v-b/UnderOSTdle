@@ -190,14 +190,14 @@ const DeltaList1 = [
   },
   {
     id: 32,
-    name: "Darkness Falls",
+    name: "The Circus",
     motifs: ["Freedom Motif"],
     url: "https://www.youtube.com/watch?v=c3i9htqPAbk&list=PLKXdyINOQYsbroHtsNBW6OJaNZKLh8lf6&index=32",
     game: "D1",
   },
   {
     id: 33,
-    name: "The World Revolving",
+    name: "THE WORLD REVOLVING",
     motifs: ["The Chase", "Freedom Motif", "Don't Forget"],
     url: "https://www.youtube.com/watch?v=cfxTZ0aw6iY&list=PLKXdyINOQYsbroHtsNBW6OJaNZKLh8lf6&index=33",
     game: "D1",
