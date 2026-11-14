@@ -223,6 +223,13 @@ const DeltaList5 = [
     url: "https://www.youtube.com/watch?v=W-ef0vk66HM&list=PLKXdyINOQYsbqGQp08A83PtAWNBrY1FXP&index=38",
     game: "D34",
   },
+  {
+    id: 40,
+    name: "Goodnight, Sweet Prince",
+    motifs: ["Flowery"],
+    url: "https://www.youtube.com/watch?v=QBf09fw0OhQ&list=PLKXdyINOQYsbqGQp08A83PtAWNBrY1FXP&index=40",
+    game: "D34",
+  },
 ];
 
 export default DeltaList5;
