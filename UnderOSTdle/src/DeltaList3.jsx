@@ -9,7 +9,7 @@ const DeltaList3 = [
   {
     id: 2,
     name: "Feature Presentation",
-    motifs: ["TV Time!", "Tenna", ""],
+    motifs: ["TV Time!", "Tenna"],
     url: "https://www.youtube.com/watch?v=vGn0HeIjEbg&list=PLKXdyINOQYsaHwm4rJ0QDFzsaZQNQjF0U&index=2",
     game: "D34",
   },
@@ -317,7 +317,7 @@ const DeltaList3 = [
   {
     id: 53,
     name: "A DARK ZONE",
-    motifs: ["Ghost Fight!", "The Legend"],
+    motifs: ["Ghost Fight", "The Legend"],
     url: "https://www.youtube.com/watch?v=K-ifukvnICY&list=PLKXdyINOQYsaHwm4rJ0QDFzsaZQNQjF0U&index=53",
     game: "D34",
   },
@@ -429,7 +429,7 @@ const DeltaList3 = [
   {
     id: 71,
     name: "The Ol' Jitterbug",
-    motifs: ["Ghost Fight!"],
+    motifs: ["Ghost Fight"],
     url: "https://www.youtube.com/watch?v=XBwYm4hHJMU&list=PLKXdyINOQYsaHwm4rJ0QDFzsaZQNQjF0U&index=71",
     game: "D34",
   },

@@ -359,7 +359,7 @@ const UndertaleList = [
   {
     id: 59,
     name: "Spider Dance",
-    motifs: ["Ghost Fight!"],
+    motifs: ["Ghost Fight"],
     url: "https://www.youtube.com/watch?v=5qZqqUgb1Rw&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=59",
     game: "U",
   },
@@ -408,7 +408,7 @@ const UndertaleList = [
   {
     id: 68,
     name: "Death by Glamour",
-    motifs: ["CORE", "It's ShowTime!", "Metal Crusher"],
+    motifs: ["CORE", "It's Showtime!", "Metal Crusher"],
     url: "https://www.youtube.com/watch?v=qeDIZCc6Cyo&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=68",
     game: "U",
   },

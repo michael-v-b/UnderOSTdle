@@ -275,7 +275,7 @@ const DeltaList2 = [
   {
     id: 43,
     name: "Chill Jail Break",
-    motifs: ["Ghost Fight!"],
+    motifs: ["Ghost Fight"],
     url: "https://www.youtube.com/watch?v=QFY1_IWVikU&list=PLKXdyINOQYsbMHB5JF-mqNQOb-8WD0iDq&index=43",
     game: "D2",
   },
