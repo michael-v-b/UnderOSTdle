@@ -44,14 +44,14 @@ const UndertaleList = [
   {
     id: 7,
     name: "Anticiaption",
-    motifs: ["Enemy Approaching"],
+    motifs: ["Anticipation"],
     url: "https://www.youtube.com/watch?v=kft3ZUYNiwE&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=7",
     game: "U",
   },
   {
     id: 9,
     name: "Enemy Approaching",
-    motifs: ["Enemy Approaching"],
+    motifs: ["Enemy Approaching", "Anticipation"],
     url: "https://www.youtube.com/watch?v=g6cK5c_59YQ&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=9",
     game: "U",
   },
@@ -310,7 +310,7 @@ const UndertaleList = [
   {
     id: 53,
     name: "Stronger Monsters",
-    motifs: ["Enemy Approaching"],
+    motifs: ["Enemy Approaching", "Anticipation"],
     url: "https://www.youtube.com/watch?v=lEbHopRL0OA&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=53",
     game: "U",
   },
@@ -580,6 +580,7 @@ const UndertaleList = [
       "Once Upon A Time",
       "Toriel",
       "Ruins",
+      "Anticipation",
       "Enemy Approaching",
       "Sans",
       "Papyrus",
