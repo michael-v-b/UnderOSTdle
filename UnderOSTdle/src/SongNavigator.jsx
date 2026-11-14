@@ -3,12 +3,19 @@ import UndertaleList from "./UndertaleList.jsx";
 import DeltaList1 from "./DeltaList1.jsx";
 import DeltaList2 from "./DeltaList2.jsx";
 import DeltaList3 from "./DeltaList3.jsx";
+import DeltaList5 from "./DeltaList5.jsx";
 const SongNavigator = () => {
   const songLibrarby = new Map();
   const motifsLibrarby = new Map();
   var selectedSongAndPath;
   var currentSong;
-  const songListList = [UndertaleList, DeltaList1, DeltaList2, DeltaList3];
+  const songListList = [
+    UndertaleList,
+    DeltaList1,
+    DeltaList2,
+    DeltaList3,
+    DeltaList5,
+  ];
 
   //initialize the songLibrarby and motifLibrarby functions
   function initializeSongs(list) {
