@@ -16,7 +16,7 @@ const DeltaList1 = [
   {
     id: 3,
     name: "School",
-    motifs: ["HomeTown", "Don't Forget", "Hopes and Dreams"],
+    motifs: ["Hometown", "Don't Forget", "Hopes and Dreams"],
     url: "https://www.youtube.com/watch?v=5b2cW417WXg&list=PLKXdyINOQYsbroHtsNBW6OJaNZKLh8lf6&index=3",
     game: "D1",
   },
@@ -226,7 +226,7 @@ const DeltaList1 = [
   {
     id: 37,
     name: "A Town Called Hometown",
-    motifs: ["HomeTown", "Don't Forget", "Hopes And Dreams"],
+    motifs: ["Hometown", "Don't Forget", "Hopes and Dreams"],
     url: "https://www.youtube.com/watch?v=2_1JGqBPziI&list=PLKXdyINOQYsbroHtsNBW6OJaNZKLh8lf6&index=37",
     game: "D1",
   },

@@ -464,7 +464,7 @@ const DeltaList3 = [
   {
     id: 76,
     name: "Catswing",
-    motifs: ["Catswing", "It's TV Time!", "Spamton", "BIG SHOT", "Tenna"],
+    motifs: ["Catswing", "TV Time!", "Spamton", "BIG SHOT", "Tenna"],
     url: "https://www.youtube.com/watch?v=r-DvoCTarMQ&list=PLKXdyINOQYsaHwm4rJ0QDFzsaZQNQjF0U&index=76",
     game: "D34",
   },

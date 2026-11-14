@@ -135,7 +135,7 @@ const DeltaList2 = [
   {
     id: 21,
     name: "HEY EVERY!",
-    motifs: ["TV Time"],
+    motifs: ["TV Time!"],
     url: "https://www.youtube.com/watch?v=1voYPPWllPU&list=PLKXdyINOQYsbMHB5JF-mqNQOb-8WD0iDq&index=21",
     game: "D2",
   },
@@ -254,7 +254,7 @@ const DeltaList2 = [
   {
     id: 39,
     name: "Spamton NEO",
-    motifs: ["Spamton", "BIG SHOT", "Dummy!", "Freedom Motif", "Power of Neo"],
+    motifs: ["Spamton", "BIG SHOT", "Dummy!", "Freedom Motif", "Power of NEO"],
     url: "https://www.youtube.com/watch?v=V31PVkwzpEY&list=PLKXdyINOQYsbMHB5JF-mqNQOb-8WD0iDq&index=39",
     game: "D2",
   },
