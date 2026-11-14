@@ -128,7 +128,7 @@ const UndertaleList = [
   {
     id: 22,
     name: "Snowdin Town",
-    motifs: ["Snowdin", "Don't Forget", "Hopes and Dreams"],
+    motifs: ["Snowdin", "Hopes and Dreams"],
     url: "https://www.youtube.com/watch?v=LETChg7kPJo&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=22",
     game: "U",
   },
@@ -210,13 +210,6 @@ const UndertaleList = [
     game: "U",
   },
   {
-    id: 35,
-    name: "Bird That Carries You Over A Disproportionately Small Gapy",
-    motifs: ["Alphys"],
-    url: "https://www.youtube.com/watch?v=lV28xl-YKw4&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=35",
-    game: "U",
-  },
-  {
     id: 36,
     name: "Dummy!",
     motifs: ["Ghost Fight", "Dummy!"],
@@ -277,13 +270,6 @@ const UndertaleList = [
     name: "Spear of Justice",
     motifs: ["Undyne", "Ruins"],
     url: "https://www.youtube.com/watch?v=XGzYhJcm-Jw&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=46",
-    game: "U",
-  },
-  {
-    id: 48,
-    name: "Alphys",
-    motifs: ["Alphys"],
-    url: "https://www.youtube.com/watch?v=gaCaF-MbkzQ&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=48",
     game: "U",
   },
   {
@@ -364,20 +350,6 @@ const UndertaleList = [
     game: "U",
   },
   {
-    id: 61,
-    name: "Oh! One True Love",
-    motifs: ["Oh!"],
-    url: "https://www.youtube.com/watch?v=05hl_0yth-g&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=61",
-    game: "U",
-  },
-  {
-    id: 62,
-    name: "Oh! Dungeon!",
-    motifs: ["Oh!"],
-    url: "https://www.youtube.com/watch?v=X4Dhvns8BnU&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=62",
-    game: "U",
-  },
-  {
     id: 63,
     name: "It's Raining Somewhere Else",
     motifs: ["Sans"],
@@ -410,13 +382,6 @@ const UndertaleList = [
     name: "Death by Glamour",
     motifs: ["CORE", "It's Showtime!", "Metal Crusher"],
     url: "https://www.youtube.com/watch?v=qeDIZCc6Cyo&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=68",
-    game: "U",
-  },
-  {
-    id: 69,
-    name: "For the Fans",
-    motifs: ["Oh!"],
-    url: "https://www.youtube.com/watch?v=HW8nh_oSCgg&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=69",
     game: "U",
   },
   {
@@ -487,20 +452,6 @@ const UndertaleList = [
     name: "An Ending",
     motifs: ["Ruins"],
     url: "https://www.youtube.com/watch?v=9g6V67JzAHY&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=81",
-    game: "U",
-  },
-  {
-    id: 82,
-    name: "She's Playing Piano",
-    motifs: ["Alphys"],
-    url: "https://www.youtube.com/watch?v=raVKWF_Ifas&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=82",
-    game: "U",
-  },
-  {
-    id: 83,
-    name: "Here We Are",
-    motifs: ["Alphys"],
-    url: "https://www.youtube.com/watch?v=52olsp3GUqY&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=83",
     game: "U",
   },
   {

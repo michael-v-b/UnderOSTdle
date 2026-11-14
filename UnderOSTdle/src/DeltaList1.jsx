@@ -184,7 +184,7 @@ const DeltaList1 = [
   {
     id: 31,
     name: "Darkness Falls",
-    motifs: ["Darkness Falls", "Gaster"],
+    motifs: ["Darkness Falls", "Determination", "Gaster"],
     url: "https://www.youtube.com/watch?v=i6ZCzBhIRzo&list=PLKXdyINOQYsbroHtsNBW6OJaNZKLh8lf6&index=31",
     game: "D1",
   },

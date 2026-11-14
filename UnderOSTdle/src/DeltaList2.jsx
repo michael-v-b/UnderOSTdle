@@ -93,7 +93,7 @@ const DeltaList2 = [
   {
     id: 16,
     name: "Faint Courage",
-    motifs: ["Darkness Falls"],
+    motifs: ["Darkness Falls", "Determination"],
     url: "https://www.youtube.com/watch?v=1axevc0iEqE&list=PLKXdyINOQYsbMHB5JF-mqNQOb-8WD0iDq&index=16",
     game: "D2",
   },
@@ -253,7 +253,7 @@ const DeltaList2 = [
   },
   {
     id: 39,
-    name: "Spamton NEO",
+    name: "BIG SHOT",
     motifs: ["Spamton", "BIG SHOT", "Dummy!", "Freedom Motif", "Power of NEO"],
     url: "https://www.youtube.com/watch?v=V31PVkwzpEY&list=PLKXdyINOQYsbMHB5JF-mqNQOb-8WD0iDq&index=39",
     game: "D2",

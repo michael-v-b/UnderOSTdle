@@ -95,18 +95,20 @@ const SongNavigator = () => {
     }
   }
 
+  function printPath(path, start, end) {
+    var output = [end];
+    var currentSong = path.get(end);
+    console.log("currentSong: " + currentSong);
+    while (currentSong != null && currentSong != start) {
+      output.push(currentSong);
+      currentSong = path.get(currentSong);
+    }
+    output.push(start);
+    return output;
+  }
+  // initialize all the songs
   for (let i = 0; i < songListList.length; i++) {
     initializeSongs(songListList[i]);
-  }
-
-  selectedSongAndPath = findSongWithDistance("Once Upon a Time", 1);
-  resetSongs();
-  console.log(motifsLibrarby);
-  if (selectedSongAndPath != null) {
-    console.log("selectedSong: ");
-    console.log(selectedSongAndPath);
-  } else {
-    console.log("no song found");
   }
 };
 
