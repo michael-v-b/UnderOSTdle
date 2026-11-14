@@ -245,10 +245,17 @@ const UndertaleList = [
     game: "U",
   },
   {
-    id: 43,
-    name: "Temmie Village",
-    motifs: ["Flowey", "Enemy Approaching"],
-    url: "https://www.youtube.com/watch?v=W_KIzOudAlY&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=43",
+    id: 39,
+    name: "Spookwave",
+    motifs: ["Ghost Fight"],
+    url: "https://www.youtube.com/watch?v=DRIOFUDEpLY&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=39",
+    game: "U",
+  },
+  {
+    id: 40,
+    name: "Ghouliday",
+    motifs: ["Jingle Bells"],
+    url: "https://www.youtube.com/watch?v=QDbwvVvufAw&list=PLLEnFvcx6ZhiQEcXf1MXd_TF0Hu1f9QDV&index=40",
     game: "U",
   },
   {
@@ -527,7 +534,7 @@ const UndertaleList = [
   {
     id: 88,
     name: "Burn In Despair",
-    motifs: ["Your Best Nightmare", "Burn In Despair"],
+    motifs: ["Your Best Nightmare", "Black Knife"],
     url: "https://www.youtube.com/watch?v=HAnJX4uudqY&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=88",
     game: "U",
   },

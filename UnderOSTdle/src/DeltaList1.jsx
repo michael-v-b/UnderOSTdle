@@ -37,14 +37,14 @@ const DeltaList1 = [
   {
     id: 5,
     name: "The Door",
-    motifs: ["The Door"],
+    motifs: ["The Chase"],
     url: "https://www.youtube.com/watch?v=KWi1-9eLO_o&list=PLKXdyINOQYsbroHtsNBW6OJaNZKLh8lf6&index=5",
     game: "D1",
   },
   {
     id: 7,
     name: "The Chase",
-    motifs: ["The Door"],
+    motifs: ["The Chase"],
     url: "https://www.youtube.com/watch?v=OX5iGh2pgxk&list=PLKXdyINOQYsbroHtsNBW6OJaNZKLh8lf6&index=7",
     game: "D1",
   },

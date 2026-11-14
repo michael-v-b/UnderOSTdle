@@ -2,12 +2,13 @@ import Song from "./Song.jsx";
 import UndertaleList from "./UndertaleList.jsx";
 import DeltaList1 from "./DeltaList1.jsx";
 import DeltaList2 from "./DeltaList2.jsx";
+import DeltaList3 from "./DeltaList3.jsx";
 const SongNavigator = () => {
   const songLibrarby = new Map();
   const motifsLibrarby = new Map();
   var selectedSongAndPath;
   var currentSong;
-  const SONG_ARRAY_SIZE = 4;
+  const songListList = [UndertaleList, DeltaList1, DeltaList2, DeltaList3];
 
   //initialize the songLibrarby and motifLibrarby functions
   function initializeSongs(list) {
@@ -87,9 +88,9 @@ const SongNavigator = () => {
     }
   }
 
-  initializeSongs(UndertaleList);
-  initializeSongs(DeltaList1);
-  initializeSongs(DeltaList2);
+  for (let i = 0; i < songListList.length; i++) {
+    initializeSongs(songListList[i]);
+  }
 
   selectedSongAndPath = findSongWithDistance("Once Upon a Time", 1);
   resetSongs();
