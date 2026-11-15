@@ -90,3 +90,9 @@
     padding:1vh;
     margin-left:2vh;
 }
+.error-message{
+    color:rgb(243, 135, 171);
+    font-size: 3vh;
+    margin-top:3vh;
+    text-decoration:underline;
+}

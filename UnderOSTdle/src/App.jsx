@@ -14,6 +14,8 @@ function App() {
   const [difficulty, setDifficulty] = useState(2);
   const [guessedSongs, setGuessedSongs] = useState([]);
   const [graphBuilt, setBuilt] = useState(false);
+  const [notSong, setNotSong] = useState(false);
+  const [notNeighbor, setNotNeighbor] = useState(false);
   const SongManagerRef = useRef(null);
 
   // build graph
@@ -42,6 +44,11 @@ function App() {
   }, [currentSong]);
 
   const handleSubmit = () => {
+    //if the guess is not a real song
+    if (!SongManagerRef.current.getSong(songGuess)) {
+      setNotSong(true);
+      return false;
+    }
     //check if neighbors with current song
     const nextResult = SongManagerRef.current.checkNeighbor(
       currentSong.name,
@@ -49,8 +56,11 @@ function App() {
     );
     //if not neighbors with first song do not continue
     if (!nextResult) {
+      setNotNeighbor(true);
       return false;
     }
+    setNotSong(false);
+    setNotNeighbor(false);
     var guessedSong = SongManagerRef.current.getSong(songGuess);
     setCurrentSong(guessedSong);
 
@@ -88,6 +98,8 @@ function App() {
             placeholder="Enter a song"
             onChange={(event) => {
               setSongGuess(event.target.value);
+              setNotNeighbor(false);
+              setNotSong(false);
             }}
           ></input>
           <motion.div
@@ -99,6 +111,16 @@ function App() {
             Submit
           </motion.div>
         </div>
+        {notSong && (
+          <div className="error-message">
+            * {songGuess} is not a song in Undertale or Deltarune
+          </div>
+        )}
+        {notNeighbor && (
+          <div className="error-message">
+            * {songGuess} does not share any motifs with {startSong.name}
+          </div>
+        )}
       </div>
     </>
   );

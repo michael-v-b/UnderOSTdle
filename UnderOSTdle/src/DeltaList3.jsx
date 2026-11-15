@@ -290,7 +290,7 @@ const DeltaList3 = [
     id: 50,
     name: "From Now On (Battle 2)",
     motifs: ["Dark Sanctuary", "Don't Forget"],
-    url: "https://www.youtube.com/watch?v=cNG0Ay3B3Mk&list=PLKXdyINOQYsaHwm4rJ0QDFzsaZQNQjF0U&index=49",
+    url: "https://www.youtube.com/watch?v=OobVFldn6As&list=RDOobVFldn6As&start_radio=1",
     game: "D34",
   },
   {

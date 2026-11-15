@@ -206,7 +206,7 @@ const DeltaList2 = [
     id: 32,
     name: "Attack of the Killer Queen",
     motifs: ["Queen", "Berdly"],
-    url: "https://www.youtube.com/watch?v=2ZDp_OwXXsc&list=PLKXdyINOQYsbMHB5JF-mqNQOb-8WD0iDq&index=32",
+    url: "https://www.youtube.com/watch?v=XR2QQMfeJbg&list=PLKXdyINOQYsbMHB5JF-mqNQOb-8WD0iDq&index=32",
     game: "D2",
   },
   {
