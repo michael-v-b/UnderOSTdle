@@ -11,25 +11,50 @@ function App() {
   const [currentSong, setCurrentSong] = useState("");
   const [songGuess, setSongGuess] = useState("");
   const [wonGame, setWonGame] = useState(false);
+  const [difficulty, setDifficulty] = useState(2);
+  const [guessedSongs, setGuessedSongs] = useState([]);
+  const [graphBuilt, setBuilt] = useState(false);
   const SongManagerRef = useRef(null);
 
+  // build graph
+  useEffect(() => {
+    SongManagerRef.current.initializeSongs();
+    setBuilt(true);
+  }, []);
+  //update songs when difficulty is changed
   useEffect(() => {
     var songs = [];
-    SongManagerRef.current.initializeSongs();
-    songs = SongManagerRef.current.getSongs(2);
-    setStartSong(songs[0]);
-    setCurrentSong(songs[0]);
-    setEndSong(songs[1]);
-  }, []);
+    if (graphBuilt) {
+      songs = SongManagerRef.current.getSongs(difficulty);
+      setStartSong(songs[0]);
+      setCurrentSong(songs[0]);
+      setEndSong(songs[1]);
+    }
+  }, [difficulty, graphBuilt]);
+
+  useEffect(() => {
+    if (currentSong && currentSong != startSong) {
+      setGuessedSongs((prevGuessedSongs) => [
+        ...guessedSongs,
+        <SongBox song={currentSong} />,
+      ]);
+    }
+  }, [currentSong]);
 
   const handleSubmit = () => {
+    //check if neighbors with current song
     const nextResult = SongManagerRef.current.checkNeighbor(
       currentSong.name,
       songGuess,
     );
+    //if not neighbors with first song do not continue
     if (!nextResult) {
       return false;
     }
+    var guessedSong = SongManagerRef.current.getSong(songGuess);
+    setCurrentSong(guessedSong);
+
+    //check if song wins
     const finalResult = SongManagerRef.current.checkNeighbor(
       songGuess,
       endSong.name,
@@ -53,7 +78,8 @@ function App() {
         <div className="instruction-header">Songs to Connect:</div>
         <div className="song-container">
           <SongBox song={startSong} />
-          <GuessBox />
+          {guessedSongs}
+          {!wonGame && <GuessBox />}
           <SongBox song={endSong} />
         </div>
         <div className="song-guess-container">

@@ -160,6 +160,7 @@ const SongManager = forwardRef(({}, ref) => {
     findSongWithDistance,
     printSongList,
     getSongs,
+    getSong,
     checkNeighbor,
   }));
 });
