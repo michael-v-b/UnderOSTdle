@@ -198,7 +198,7 @@ const UndertaleList = [
   {
     id: 33,
     name: "Quiet Water",
-    motifs: ["Undyne", "Quiet"],
+    motifs: ["Ruins", "Quiet"],
     url: "https://www.youtube.com/watch?v=4LfRKEovz2Y&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=33",
     game: "U",
   },

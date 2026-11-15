@@ -20,6 +20,17 @@
     margin-bottom:5vh;
     text-decoration:underline;
 }
+.play-again {
+    color:white;
+    border-style:solid;
+    border-width:2px;
+    border-color:white;
+    border-radius:25px;
+    font-size:3vh;
+    padding:1vh;
+    margin:2vh;
+    margin-bottom:3vh;
+}
 .song-container{
     height:55vh;
     display: flex;

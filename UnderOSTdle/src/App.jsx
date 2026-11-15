@@ -25,12 +25,8 @@ function App() {
   }, []);
   //update songs when difficulty is changed
   useEffect(() => {
-    var songs = [];
     if (graphBuilt) {
-      songs = SongManagerRef.current.getSongs(difficulty);
-      setStartSong(songs[0]);
-      setCurrentSong(songs[0]);
-      setEndSong(songs[1]);
+      newGame();
     }
   }, [difficulty, graphBuilt]);
 
@@ -74,6 +70,17 @@ function App() {
     }
   };
 
+  function newGame() {
+    var songs;
+    songs = SongManagerRef.current.getSongs(difficulty);
+    setStartSong(songs[0]);
+    setCurrentSong(songs[0]);
+    setEndSong(songs[1]);
+    setGuessedSongs([]);
+    setWonGame(false);
+    setSongGuess("");
+  }
+
   return (
     <>
       <div className="page-container">
@@ -84,7 +91,19 @@ function App() {
             Connect the 2 Undertale/Deltarune songs using their shared motifs!
           </p>
         </div>
-        {wonGame && <div className="win-text">YOU WIN!!!</div>}
+        {wonGame && (
+          <>
+            <div className="win-text">YOU WIN!!!</div>
+            <motion.div
+              className="play-again"
+              whileHover={{ scale: 1.1, backgroundColor: "#494949" }}
+              whileTap={{ scale: 0.9, backgroundColor: "#999999" }}
+              onMouseUp={newGame}
+            >
+              Play Again?
+            </motion.div>
+          </>
+        )}
         <div className="instruction-header">Songs to Connect:</div>
         <div className="song-container">
           <SongBox song={startSong} />
@@ -96,6 +115,7 @@ function App() {
           <input
             className="song-input"
             placeholder="Enter a song"
+            value={songGuess}
             onChange={(event) => {
               setSongGuess(event.target.value);
               setNotNeighbor(false);
