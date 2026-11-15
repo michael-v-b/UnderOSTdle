@@ -1,10 +1,11 @@
+import { forwardRef, useImperativeHandle } from "react";
 import Song from "./Song.jsx";
 import UndertaleList from "./UndertaleList.jsx";
 import DeltaList1 from "./DeltaList1.jsx";
 import DeltaList2 from "./DeltaList2.jsx";
 import DeltaList3 from "./DeltaList3.jsx";
 import DeltaList5 from "./DeltaList5.jsx";
-const SongNavigator = () => {
+const SongManager = forwardRef(({}, ref) => {
   const songLibrarby = new Map();
   const motifsLibrarby = new Map();
   var selectedSongAndPath;
@@ -18,25 +19,27 @@ const SongNavigator = () => {
   ];
 
   //initialize the songLibrarby and motifLibrarby functions
-  function initializeSongs(list) {
-    for (let i = 0; i < list.length; i++) {
-      var songID = list[i].id;
-      var songName = list[i].name;
-      var songMotifs = list[i].motifs;
-      var songURL = list[i].url;
-      var songGame = list[i].game;
-      // add new song to song librarby
-      songLibrarby.set(
-        songName,
-        new Song(songID, songName, songMotifs, songURL, songGame),
-      );
-      for (let j = 0; j < songMotifs.length; j++) {
-        var motif = songMotifs[j];
-        //if motif isn't present then add it, otherwise push song to end of motifs library
-        if (!motifsLibrarby.has(motif)) {
-          motifsLibrarby.set(motif, [songName]);
-        } else {
-          motifsLibrarby.get(motif).push(songName);
+  function initializeSongs() {
+    for (let list of songListList) {
+      for (let i = 0; i < list.length; i++) {
+        var songID = list[i].id;
+        var songName = list[i].name;
+        var songMotifs = list[i].motifs;
+        var songURL = list[i].url;
+        var songGame = list[i].game;
+        // add new song to song librarby
+        songLibrarby.set(
+          songName,
+          new Song(songID, songName, songMotifs, songURL, songGame),
+        );
+        for (let j = 0; j < songMotifs.length; j++) {
+          var motif = songMotifs[j];
+          //if motif isn't present then add it, otherwise push song to end of motifs library
+          if (!motifsLibrarby.has(motif)) {
+            motifsLibrarby.set(motif, [songName]);
+          } else {
+            motifsLibrarby.get(motif).push(songName);
+          }
         }
       }
     }
@@ -83,6 +86,7 @@ const SongNavigator = () => {
       }
     }
     outputSongIndex = Math.floor(Math.random() * songQueue.length);
+    resetSongs();
     return [songQueue[outputSongIndex], path];
   }
 
@@ -106,10 +110,33 @@ const SongNavigator = () => {
     output.push(start);
     return output;
   }
-  // initialize all the songs
-  for (let i = 0; i < songListList.length; i++) {
-    initializeSongs(songListList[i]);
-  }
-};
 
-export default SongNavigator;
+  function printSongList() {
+    console.log(songLibrarby);
+  }
+  function getSong(songName) {
+    return songLibrarby.get(songName);
+  }
+
+  function getMotifList() {
+    return motifsLibrarby;
+  }
+
+  function getSongs(distance) {
+    const songNames = Array.from(songLibrarby.keys());
+    var index = Math.floor(Math.random() * songNames.length);
+    var song1 = songNames[index];
+    var song2AndPath = findSongWithDistance(song1, distance);
+    return [song1, song2AndPath[0].name];
+  }
+
+  useImperativeHandle(ref, () => ({
+    initializeSongs,
+    printPath,
+    findSongWithDistance,
+    printSongList,
+    getSongs,
+  }));
+});
+
+export default SongManager;
