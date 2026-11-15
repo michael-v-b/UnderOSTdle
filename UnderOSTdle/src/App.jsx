@@ -1,13 +1,16 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import SongManager from "./SongManager.jsx";
+import GuessBox from "./GuessBox.jsx";
 import SongBox from "./SongBox.jsx";
 import "./App.css";
 
 function App() {
   const [startSong, setStartSong] = useState("");
   const [endSong, setEndSong] = useState("");
+  const [currentSong, setCurrentSong] = useState("");
   const [songGuess, setSongGuess] = useState("");
+  const [wonGame, setWonGame] = useState(false);
   const SongManagerRef = useRef(null);
 
   useEffect(() => {
@@ -15,15 +18,24 @@ function App() {
     SongManagerRef.current.initializeSongs();
     songs = SongManagerRef.current.getSongs(2);
     setStartSong(songs[0]);
+    setCurrentSong(songs[0]);
     setEndSong(songs[1]);
   }, []);
 
   const handleSubmit = () => {
-    const result = SongManagerRef.current.checkSong(songGuess);
-    if (result) {
-      console.log("result was true");
-    } else {
-      console.log("result was false");
+    const nextResult = SongManagerRef.current.checkNeighbor(
+      currentSong.name,
+      songGuess,
+    );
+    if (!nextResult) {
+      return false;
+    }
+    const finalResult = SongManagerRef.current.checkNeighbor(
+      songGuess,
+      endSong.name,
+    );
+    if (finalResult) {
+      setWonGame(true);
     }
   };
 
@@ -33,14 +45,15 @@ function App() {
         <SongManager ref={SongManagerRef} />
         <div>
           <h1>UnderOSTdle</h1>
-          <p>
-            Connect the 2 Undertale/Deltarune songs using their shared Motifs!
+          <p className="instruction">
+            Connect the 2 Undertale/Deltarune songs using their shared motifs!
           </p>
         </div>
-        <div>Songs to Connect:</div>
+        {wonGame && <div className="win-text">YOU WIN!!!</div>}
+        <div className="instruction-header">Songs to Connect:</div>
         <div className="song-container">
           <SongBox song={startSong} />
-          <div className="guess-box">?</div>
+          <GuessBox />
           <SongBox song={endSong} />
         </div>
         <div className="song-guess-container">

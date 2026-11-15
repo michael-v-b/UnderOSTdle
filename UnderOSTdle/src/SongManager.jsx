@@ -1,4 +1,4 @@
-import { forwardRef, useImperativeHandle } from "react";
+import { useRef, forwardRef, useImperativeHandle } from "react";
 import Song from "./Song.jsx";
 import UndertaleList from "./UndertaleList.jsx";
 import DeltaList1 from "./DeltaList1.jsx";
@@ -6,8 +6,8 @@ import DeltaList2 from "./DeltaList2.jsx";
 import DeltaList3 from "./DeltaList3.jsx";
 import DeltaList5 from "./DeltaList5.jsx";
 const SongManager = forwardRef(({}, ref) => {
-  const songLibrarby = new Map();
-  const motifsLibrarby = new Map();
+  const songLibrarbyRef = useRef(new Map());
+  const motifsLibrarbyRef = useRef(new Map());
   var selectedSongAndPath;
   var currentSong;
   const songListList = [
@@ -20,6 +20,8 @@ const SongManager = forwardRef(({}, ref) => {
 
   //initialize the songLibrarby and motifLibrarby functions
   function initializeSongs() {
+    const songLibrarby = songLibrarbyRef.current;
+    const motifsLibrarby = motifsLibrarbyRef.current;
     for (let list of songListList) {
       for (let i = 0; i < list.length; i++) {
         var songID = list[i].id;
@@ -47,6 +49,8 @@ const SongManager = forwardRef(({}, ref) => {
 
   //returns a random song that is that distance away
   function findSongWithDistance(startSong, distance) {
+    const songLibrarby = songLibrarbyRef.current;
+    const motifsLibrarby = motifsLibrarbyRef.current;
     //break if start song is not present
     if (!songLibrarby.has(startSong)) {
       console.log("has niether of the songs");
@@ -92,6 +96,7 @@ const SongManager = forwardRef(({}, ref) => {
 
   //resets the visited and distance values for each song
   function resetSongs() {
+    const songLibrarby = songLibrarbyRef.current;
     for (var songName of songLibrarby.keys()) {
       var currentSong = songLibrarby.get(songName);
       currentSong.visited = false;
@@ -112,17 +117,18 @@ const SongManager = forwardRef(({}, ref) => {
   }
 
   function printSongList() {
-    console.log(songLibrarby);
+    console.log(songLibrarbyRef.current);
   }
   function getSong(songName) {
-    return songLibrarby.get(songName);
+    return songLibrarbyRef.current.get(songName);
   }
 
   function getMotifList() {
-    return motifsLibrarby;
+    return motifsLibrarbyRef;
   }
 
   function getSongs(distance) {
+    const songLibrarby = songLibrarbyRef.current;
     const songNames = Array.from(songLibrarby.keys());
     var index = Math.floor(Math.random() * songNames.length);
     var song1 = songNames[index];
@@ -130,8 +136,22 @@ const SongManager = forwardRef(({}, ref) => {
     return [getSong(song1), song2AndPath[0]];
   }
 
-  function checkSong(songName) {
-    return true;
+  function checkNeighbor(songNameA, songNameB) {
+    const songLibrarby = songLibrarbyRef.current;
+    const motifsLibrarby = motifsLibrarbyRef.current;
+    if (!songLibrarby.has(songNameA) || !songLibrarby.has(songNameB)) {
+      return false;
+    }
+    const songA = songLibrarby.get(songNameA);
+    //check if song name is a neighbor to currentSong
+    for (const motif of songA.motifs) {
+      for (const song of motifsLibrarby.get(motif)) {
+        if (songNameB == song) {
+          return true;
+        }
+      }
+    }
+    return false;
   }
 
   useImperativeHandle(ref, () => ({
@@ -140,7 +160,7 @@ const SongManager = forwardRef(({}, ref) => {
     findSongWithDistance,
     printSongList,
     getSongs,
-    checkSong,
+    checkNeighbor,
   }));
 });
 
