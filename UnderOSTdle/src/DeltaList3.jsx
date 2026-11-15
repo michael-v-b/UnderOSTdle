@@ -126,13 +126,6 @@ const DeltaList3 = [
     game: "D34",
   },
   {
-    id: 22,
-    name: "Glowing Snow",
-    motifs: ["Uwa!", "Quiet"],
-    url: "https://www.youtube.com/watch?v=pCF3YY9BwBs&list=PLKXdyINOQYsaHwm4rJ0QDFzsaZQNQjF0U&index=22",
-    game: "D34",
-  },
-  {
     id: 23,
     name: "Big City Board",
     motifs: ["Tenna", "Don't Forget"],

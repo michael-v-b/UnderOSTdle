@@ -107,7 +107,7 @@ const DeltaList1 = [
   {
     id: 18,
     name: "Quiet Autumn",
-    motifs: ["Quiet", "Scarlet Forest"],
+    motifs: ["Scarlet Forest"],
     url: "https://www.youtube.com/watch?v=2PkQJeH9Ers&list=PLKXdyINOQYsbroHtsNBW6OJaNZKLh8lf6&index=18",
     game: "D1",
   },
@@ -233,7 +233,7 @@ const DeltaList1 = [
   {
     id: 38,
     name: "You Can Always Come Home",
-    motifs: ["Quiet", "Once Upon A Time", "Don't Forget"],
+    motifs: ["Once Upon A Time", "Don't Forget"],
     url: "https://www.youtube.com/watch?v=2_1JGqBPziI&list=PLKXdyINOQYsbroHtsNBW6OJaNZKLh8lf6&index=38",
     game: "D1",
   },
@@ -247,7 +247,7 @@ const DeltaList1 = [
   {
     id: 40,
     name: "Before The Story",
-    motifs: ["Quiet", "The Holy", "Once Upon A Time"],
+    motifs: ["The Holy", "Once Upon A Time"],
     url: "https://www.youtube.com/watch?v=r9shwL1h-qA&list=PLKXdyINOQYsbroHtsNBW6OJaNZKLh8lf6&index=40",
     game: "D1",
   },

@@ -35,13 +35,6 @@ const UndertaleList = [
     game: "U",
   },
   {
-    id: 6,
-    name: "Uwa! So Temperate",
-    motifs: ["Uwa!", "Quiet"],
-    url: "https://www.youtube.com/watch?v=wvT8KrI1nvo&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=6",
-    game: "U",
-  },
-  {
     id: 7,
     name: "Anticiaption",
     motifs: ["Anticipation"],
@@ -72,7 +65,7 @@ const UndertaleList = [
   {
     id: 12,
     name: "Home",
-    motifs: ["Once Upon A Time", "Quiet"],
+    motifs: ["Once Upon A Time"],
     url: "https://www.youtube.com/watch?v=0UkRqMFMZic&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=12",
     game: "U",
   },
@@ -109,13 +102,6 @@ const UndertaleList = [
     name: "Dog Bass",
     motifs: ["Ghost Fight"],
     url: "https://www.youtube.com/watch?v=meUZ2HjwJ0o&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=19",
-    game: "U",
-  },
-  {
-    id: 20,
-    name: "Mysterious Place",
-    motifs: ["Quiet"],
-    url: "https://www.youtube.com/watch?v=ewxpqe2btu8&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=20",
     game: "U",
   },
   {
@@ -168,13 +154,6 @@ const UndertaleList = [
     game: "U",
   },
   {
-    id: 28,
-    name: "Premonition",
-    motifs: ["Quiet"],
-    url: "https://www.youtube.com/watch?v=qhwghQSqLpA&list=RDqhwghQSqLpA&start_radio=1",
-    game: "U",
-  },
-  {
     id: 30,
     name: "Undyne",
     motifs: ["Undyne"],
@@ -198,7 +177,7 @@ const UndertaleList = [
   {
     id: 33,
     name: "Quiet Water",
-    motifs: ["Ruins", "Quiet"],
+    motifs: ["Ruins"],
     url: "https://www.youtube.com/watch?v=4LfRKEovz2Y&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=33",
     game: "U",
   },
@@ -291,13 +270,6 @@ const UndertaleList = [
     name: "Another Medium",
     motifs: ["Another Medium"],
     url: "https://www.youtube.com/watch?v=NP4sPRIyHKM&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=51",
-    game: "U",
-  },
-  {
-    id: 52,
-    name: "Uwa!! So HEATS!!",
-    motifs: ["Uwa!"],
-    url: "https://www.youtube.com/watch?v=JPXAXHlcXFs&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=52",
     game: "U",
   },
   {

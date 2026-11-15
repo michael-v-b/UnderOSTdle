@@ -77,13 +77,6 @@ const DeltaList5 = [
     game: "D34",
   },
   {
-    id: 15,
-    name: "Quiet Glade",
-    motifs: ["Quiet"],
-    url: "https://www.youtube.com/watch?v=w55JVwZdjtA&list=PLKXdyINOQYsbqGQp08A83PtAWNBrY1FXP&index=15",
-    game: "D34",
-  },
-  {
     id: 16,
     name: "Who might you be?",
     motifs: ["Sunset of Seven Suns"],
@@ -191,7 +184,7 @@ const DeltaList5 = [
   {
     id: 34,
     name: "Flower Man",
-    motifs: ["Flowery", "Sunset of Seven Suns", "Flowery", "Don't Forget"],
+    motifs: ["Flowey", "Sunset of Seven Suns", "Flowery", "Don't Forget"],
     url: "https://www.youtube.com/watch?v=GWf9_qSrnOM&list=PLKXdyINOQYsbqGQp08A83PtAWNBrY1FXP&index=34",
     game: "D34",
   },
