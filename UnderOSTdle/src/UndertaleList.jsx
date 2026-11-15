@@ -171,7 +171,7 @@ const UndertaleList = [
     id: 28,
     name: "Premonition",
     motifs: ["Quiet"],
-    url: "https://www.youtube.com/watch?v=e9YJ1D6HbAU&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=27",
+    url: "https://www.youtube.com/watch?v=qhwghQSqLpA&list=RDqhwghQSqLpA&start_radio=1",
     game: "U",
   },
   {

@@ -1,0 +1,75 @@
+.page-container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+.song-container{
+    height:55vh;
+    display: flex;
+    text-align: center;
+    flex-direction:row;
+    justify-content:space-between;
+}
+.song-box{
+    width:40vh;
+    height:45vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    border-color:white;
+    border-width:2px;
+    border-style:solid;
+    border-radius:100px;
+    
+    padding-right:5vh;
+    padding-left:5vh;
+
+    margin-right:5vh;
+    margin-left:5vh;
+}
+.song-box-text{
+    color:white;
+    font-size:3vh;
+    padding-bottom:5vh;
+}
+.guess-box {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:grey;
+    color:white;
+    width:40vh;
+    height:45vh;
+    font-size:20vh;
+    border-radius:100px;
+}
+.song-input {
+    color:white;
+    background-color:black;
+    border-radius:100px;
+    border-color:white;
+    border-style:solid;
+    border-width:2px;
+    height:5vh;
+    text-align:center;
+    font-size:3vh;
+    width:100vh;
+}
+.song-guess-container {
+    display:flex;
+    direction:row;
+}
+.submit-button{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:15px;
+    border-color:white;
+    border-style:solid;
+    border-width:2px;
+    color:white;
+    font-size:2vh;
+    padding:1vh;
+    margin-left:2vh;
+}

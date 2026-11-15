@@ -127,7 +127,11 @@ const SongManager = forwardRef(({}, ref) => {
     var index = Math.floor(Math.random() * songNames.length);
     var song1 = songNames[index];
     var song2AndPath = findSongWithDistance(song1, distance);
-    return [song1, song2AndPath[0].name];
+    return [getSong(song1), song2AndPath[0]];
+  }
+
+  function checkSong(songName) {
+    return true;
   }
 
   useImperativeHandle(ref, () => ({
@@ -136,6 +140,7 @@ const SongManager = forwardRef(({}, ref) => {
     findSongWithDistance,
     printSongList,
     getSongs,
+    checkSong,
   }));
 });
 
