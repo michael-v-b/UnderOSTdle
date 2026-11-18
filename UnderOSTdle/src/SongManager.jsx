@@ -22,6 +22,8 @@ const SongManager = forwardRef(({}, ref) => {
   function initializeSongs() {
     const songLibrarby = songLibrarbyRef.current;
     const motifsLibrarby = motifsLibrarbyRef.current;
+    songLibrarby.clear();
+    motifsLibrarby.clear();
     for (let list of songListList) {
       for (let i = 0; i < list.length; i++) {
         var songID = list[i].id;
@@ -45,6 +47,7 @@ const SongManager = forwardRef(({}, ref) => {
         }
       }
     }
+    console.log(motifsLibrarby);
   }
 
   //returns a random song that is that distance away
@@ -104,15 +107,14 @@ const SongManager = forwardRef(({}, ref) => {
     }
   }
 
-  function printPath(path, start, end) {
+  function getSolution(path, start, end) {
     var output = [end];
     var currentSong = path.get(end);
-    console.log("currentSong: " + currentSong);
     while (currentSong != null && currentSong != start) {
-      output.push(currentSong);
+      output.unshift(currentSong);
       currentSong = path.get(currentSong);
     }
-    output.push(start);
+    output.unshift(start);
     return output;
   }
 
@@ -133,7 +135,7 @@ const SongManager = forwardRef(({}, ref) => {
     var index = Math.floor(Math.random() * songNames.length);
     var song1 = songNames[index];
     var song2AndPath = findSongWithDistance(song1, distance);
-    return [getSong(song1), song2AndPath[0]];
+    return [getSong(song1), song2AndPath[0], song2AndPath[1]];
   }
 
   function checkNeighbor(songNameA, songNameB) {
@@ -156,7 +158,7 @@ const SongManager = forwardRef(({}, ref) => {
 
   useImperativeHandle(ref, () => ({
     initializeSongs,
-    printPath,
+    getSolution,
     findSongWithDistance,
     printSongList,
     getSongs,

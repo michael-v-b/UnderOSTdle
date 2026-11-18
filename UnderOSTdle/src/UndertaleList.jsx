@@ -36,7 +36,7 @@ const UndertaleList = [
   },
   {
     id: 7,
-    name: "Anticiaption",
+    name: "Anticipation",
     motifs: ["Anticipation"],
     url: "https://www.youtube.com/watch?v=kft3ZUYNiwE&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=7",
     game: "U",
@@ -107,7 +107,7 @@ const UndertaleList = [
   {
     id: 21,
     name: "Dog Song",
-    motifs: ["Dog Song"],
+    motifs: ["Dog Song", "Enemy Approaching"],
     url: "https://www.youtube.com/watch?v=EWP9Nr7IxUU&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=21",
     game: "U",
   },
@@ -233,7 +233,7 @@ const UndertaleList = [
   {
     id: 44,
     name: "Tem Shop",
-    motifs: ["Flowey", "Dog Song"],
+    motifs: ["Enemy Approaching", "Dog Song"],
     url: "https://www.youtube.com/watch?v=OKJYbjxdHpg&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=44",
     game: "U",
   },
@@ -464,7 +464,7 @@ const UndertaleList = [
   {
     id: 89,
     name: "SAVE The World",
-    motifs: ["Once Upona A Time", "Hopes and Dreams", "Flowey"],
+    motifs: ["Once Upon A Time", "Hopes and Dreams", "Flowey"],
     url: "https://www.youtube.com/watch?v=OEs6SGTkXMo&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=89",
     game: "U",
   },

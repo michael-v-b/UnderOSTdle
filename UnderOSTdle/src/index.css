@@ -91,6 +91,10 @@ h2 {
 p {
   margin: 0;
 }
+hr {
+  width:80vw;
+  margin-bottom:2vh;
+}
 
 code,
 .counter {

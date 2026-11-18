@@ -8,14 +8,17 @@ import "./App.css";
 function App() {
   const [startSong, setStartSong] = useState("");
   const [endSong, setEndSong] = useState("");
+  const [songPath, setSongPath] = useState([]);
   const [currentSong, setCurrentSong] = useState("");
   const [songGuess, setSongGuess] = useState("");
   const [wonGame, setWonGame] = useState(false);
-  const [difficulty, setDifficulty] = useState(2);
+  const [difficulty, setDifficulty] = useState(3);
   const [guessedSongs, setGuessedSongs] = useState([]);
   const [graphBuilt, setBuilt] = useState(false);
   const [notSong, setNotSong] = useState(false);
   const [notNeighbor, setNotNeighbor] = useState(false);
+  const [solutionVisible, setSolutionVisible] = useState(false);
+
   const SongManagerRef = useRef(null);
 
   // build graph
@@ -31,6 +34,7 @@ function App() {
   }, [difficulty, graphBuilt]);
 
   useEffect(() => {
+    console.log("currentSong: " + currentSong.name);
     if (currentSong && currentSong != startSong) {
       setGuessedSongs((prevGuessedSongs) => [
         ...guessedSongs,
@@ -65,6 +69,8 @@ function App() {
       songGuess,
       endSong.name,
     );
+
+    console.log("finalResult: " + finalResult);
     if (finalResult) {
       setWonGame(true);
     }
@@ -76,9 +82,21 @@ function App() {
     setStartSong(songs[0]);
     setCurrentSong(songs[0]);
     setEndSong(songs[1]);
+    setSongPath(songs[2]);
     setGuessedSongs([]);
     setWonGame(false);
+    setSolutionVisible(false);
     setSongGuess("");
+  }
+
+  function showSolution() {
+    const solution = SongManagerRef.current.getSolution(
+      songPath,
+      startSong.name,
+      endSong.name,
+    );
+    setSolutionVisible(true);
+    console.log(solution);
   }
 
   return (
@@ -86,25 +104,42 @@ function App() {
       <div className="page-container">
         <SongManager ref={SongManagerRef} />
         <div>
-          <h1>UnderOSTdle</h1>
+          <h1>deltatune</h1>
           <p className="instruction">
             Connect the 2 Undertale/Deltarune songs using their shared motifs!
           </p>
         </div>
+
+        <div className="instruction-header">Songs to Connect:</div>
+
+        <div className="show-solution-container">
+          <motion.div
+            whileHover={{ scale: 1.1, backgroundColor: "#494949" }}
+            whileTap={{ scale: 0.9, backgroundColor: "#999999" }}
+            className="button-border show-solution"
+            onMouseUp={showSolution}
+          >
+            {" "}
+            Show Solution?{" "}
+          </motion.div>
+        </div>
+        <hr />
         {wonGame && (
           <>
             <div className="win-text">YOU WIN!!!</div>
-            <motion.div
-              className="play-again"
-              whileHover={{ scale: 1.1, backgroundColor: "#494949" }}
-              whileTap={{ scale: 0.9, backgroundColor: "#999999" }}
-              onMouseUp={newGame}
-            >
-              Play Again?
-            </motion.div>
           </>
         )}
-        <div className="instruction-header">Songs to Connect:</div>
+
+        {(wonGame || solutionVisible) && (
+          <motion.div
+            className="play-again"
+            whileHover={{ scale: 1.1, backgroundColor: "#494949" }}
+            whileTap={{ scale: 0.9, backgroundColor: "#999999" }}
+            onMouseUp={newGame}
+          >
+            Play Again?
+          </motion.div>
+        )}
         <div className="song-container">
           <SongBox song={startSong} />
           {guessedSongs}
@@ -138,7 +173,7 @@ function App() {
         )}
         {notNeighbor && (
           <div className="error-message">
-            * {songGuess} does not share any motifs with {startSong.name}
+            * {songGuess} does not share any motifs with {currentSong.name}
           </div>
         )}
       </div>

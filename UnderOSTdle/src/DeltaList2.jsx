@@ -43,7 +43,7 @@ const DeltaList2 = [
   },
   {
     id: 8,
-    name: "A Simple Diversion",
+    name: "Almost to the Guys!",
     motifs: ["Sweet Cap'n Cakes", "Cyber World"],
     url: "https://www.youtube.com/watch?v=RDU7SJi2sGo&list=PLKXdyINOQYsbMHB5JF-mqNQOb-8WD0iDq&index=8",
     game: "D2",

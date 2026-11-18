@@ -2,6 +2,7 @@
     display:flex;
     flex-direction:column;
     align-items:center;
+    color:white;
 }
 .instruction{
     font-size:3vh;
@@ -13,6 +14,18 @@
     color:white;
     font-size:5vh;
     margin-bottom:3vh;
+}
+.show-solution-container{
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-end;
+    width:70vw;
+    margin-bottom:1vh;
+}
+.show-solution {
+    padding:1vh;
+    font-size:3vh;
+    border-radius:15px;
 }
 .win-text {
     font-size:6vh;
@@ -106,4 +119,9 @@
     font-size: 3vh;
     margin-top:3vh;
     text-decoration:underline;
+}
+.button-border {
+    border-style:solid;
+    border-width:2px;
+    border-radius:25px;
 }
