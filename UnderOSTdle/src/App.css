@@ -18,7 +18,7 @@
 .show-solution-container{
     display:flex;
     flex-direction:row;
-    justify-content:flex-end;
+    justify-content:flex-start;
     width:70vw;
     margin-bottom:1vh;
 }
@@ -26,6 +26,7 @@
     padding:1vh;
     font-size:3vh;
     border-radius:15px;
+    margin-right:3vh;
 }
 .win-text {
     font-size:6vh;
@@ -130,4 +131,41 @@
     justify-content:center;
     align-items:center;
     margin-left:1vh;
+}
+.motif-container{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+.motif-list{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    width:35vh;
+    justify-content:center;
+}
+.motif {
+    margin-right:.5vh;
+    font-size:2.5vh;
+}
+.game-options-container{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    width:160vh;
+    margin-bottom:2vh;
+}
+.game-options{
+    font-size:3vh;
+    padding-bottom:1vh;
+    padding-right:1vh;
+    padding-left:1vh;
+    margin-left:1vh;
+    margin-right:1vh;
+}
+.difficulty-container{
+    display:flex;
+    flex-direction:row;
+    font-size:3vh;
 }

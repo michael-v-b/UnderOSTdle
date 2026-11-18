@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import SongManager from "./SongManager.jsx";
 import GuessBox from "./GuessBox.jsx";
 import SongBox from "./SongBox.jsx";
+import MotifList from "./MotifList.jsx";
 import "./App.css";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
   const [notSong, setNotSong] = useState(false);
   const [notNeighbor, setNotNeighbor] = useState(false);
   const [solutionVisible, setSolutionVisible] = useState(false);
+  const [showMotifs, setShowMotifs] = useState(false);
 
   const SongManagerRef = useRef(null);
 
@@ -39,7 +41,12 @@ function App() {
       setGuessedSongs((prevGuessedSongs) => [
         ...guessedSongs,
         <>
-          <SongBox song={currentSong} />
+          <div className="motif-container">
+            <SongBox song={currentSong} />
+            {currentSong && showMotifs && (
+              <MotifList motifs={currentSong.motifs} />
+            )}
+          </div>
           <div className="arrow">{"->"}</div>
         </>,
       ]);
@@ -101,6 +108,9 @@ function App() {
     setSolutionVisible(true);
     console.log(solution);
   }
+  function toggleMotifs() {
+    setShowMotifs(!showMotifs);
+  }
 
   return (
     <>
@@ -126,7 +136,58 @@ function App() {
             Show Solution?{" "}
           </motion.div>
         </div>
+
         <hr />
+        <div className="game-options-container">
+          <motion.div
+            whileHover={{ scale: 1.1, backgroundColor: "#494949" }}
+            whileTap={{ scale: 0.9, backgroundColor: "#999999" }}
+            className="button-border game-options"
+            onMouseUp={toggleMotifs}
+          >
+            {" "}
+            Show Motifs?{" "}
+          </motion.div>
+          <div className="difficulty-container">
+            <div className="game-option">Difficulty:</div>
+            <motion.div
+              whileHover={{ scale: 1.1, backgroundColor: "#494949" }}
+              whileTap={{ scale: 0.9, backgroundColor: "#999999" }}
+              className="button-border game-options"
+              onMouseUp={() => {
+                setDifficulty(2);
+                newGame();
+              }}
+            >
+              {" "}
+              Easy{" "}
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.1, backgroundColor: "#494949" }}
+              whileTap={{ scale: 0.9, backgroundColor: "#999999" }}
+              className="button-border game-options"
+              onMouseUp={() => {
+                setDifficulty(3);
+                newGame();
+              }}
+            >
+              {" "}
+              Medium{" "}
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.1, backgroundColor: "#494949" }}
+              whileTap={{ scale: 0.9, backgroundColor: "#999999" }}
+              className="button-border game-options"
+              onMouseUp={() => {
+                setDifficulty(4);
+                newGame();
+              }}
+            >
+              {" "}
+              Hard{" "}
+            </motion.div>
+          </div>
+        </div>
         {wonGame && (
           <>
             <div className="win-text">YOU WIN!!!</div>
@@ -144,7 +205,10 @@ function App() {
           </motion.div>
         )}
         <div className="song-container">
-          <SongBox song={startSong} />
+          <dev className="motif-container">
+            <SongBox song={startSong} />
+            {startSong && showMotifs && <MotifList motifs={startSong.motifs} />}
+          </dev>
           <div className="arrow">{"->"}</div>
           {guessedSongs}
           {!wonGame && (
@@ -153,7 +217,10 @@ function App() {
               <div className="arrow">{"->"}</div>
             </>
           )}
-          <SongBox song={endSong} />
+          <dev className="motif-container">
+            <SongBox song={endSong} />
+            {endSong && showMotifs && <MotifList motifs={endSong.motifs} />}
+          </dev>
         </div>
         <div className="song-guess-container">
           <input
