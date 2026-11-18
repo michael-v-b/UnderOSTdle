@@ -97,6 +97,7 @@ function App() {
     setWonGame(false);
     setSolutionVisible(false);
     setSongGuess("");
+    setShowMotifs(false);
   }
 
   function showSolution() {
