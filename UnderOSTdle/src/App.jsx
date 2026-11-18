@@ -38,7 +38,10 @@ function App() {
     if (currentSong && currentSong != startSong) {
       setGuessedSongs((prevGuessedSongs) => [
         ...guessedSongs,
-        <SongBox song={currentSong} />,
+        <>
+          <SongBox song={currentSong} />
+          <div className="arrow">{"->"}</div>
+        </>,
       ]);
     }
   }, [currentSong]);
@@ -142,8 +145,14 @@ function App() {
         )}
         <div className="song-container">
           <SongBox song={startSong} />
+          <div className="arrow">{"->"}</div>
           {guessedSongs}
-          {!wonGame && <GuessBox />}
+          {!wonGame && (
+            <>
+              <GuessBox />
+              <div className="arrow">{"->"}</div>
+            </>
+          )}
           <SongBox song={endSong} />
         </div>
         <div className="song-guess-container">
