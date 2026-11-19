@@ -1,5 +1,6 @@
 import ReactPlayer from "react-player";
-const SongBox = ({ song }) => {
+import MotifList from "./MotifList.jsx";
+const SongBox = ({ song, showMotifs }) => {
   return (
     <>
       <div className="song-box">
@@ -12,6 +13,7 @@ const SongBox = ({ song }) => {
           controls={true}
         />
       </div>
+      {showMotifs && <MotifList motifs={song.motifs} />}
     </>
   );
 };

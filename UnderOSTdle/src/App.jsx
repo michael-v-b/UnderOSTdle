@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import SongManager from "./SongManager.jsx";
 import GuessBox from "./GuessBox.jsx";
+import GameOptions from "./GameOptions.jsx";
 import SongBox from "./SongBox.jsx";
 import MotifList from "./MotifList.jsx";
 import "./App.css";
@@ -13,7 +14,7 @@ function App() {
   const [currentSong, setCurrentSong] = useState("");
   const [songGuess, setSongGuess] = useState("");
   const [wonGame, setWonGame] = useState(false);
-  const [difficulty, setDifficulty] = useState(3);
+  const [difficulty, setDifficulty] = useState(2);
   const [guessedSongs, setGuessedSongs] = useState([]);
   const [graphBuilt, setBuilt] = useState(false);
   const [notSong, setNotSong] = useState(false);
@@ -36,20 +37,8 @@ function App() {
   }, [difficulty, graphBuilt]);
 
   useEffect(() => {
-    console.log("currentSong: " + currentSong.name);
     if (currentSong && currentSong != startSong) {
-      setGuessedSongs((prevGuessedSongs) => [
-        ...guessedSongs,
-        <>
-          <div className="motif-container">
-            <SongBox song={currentSong} />
-            {currentSong && showMotifs && (
-              <MotifList motifs={currentSong.motifs} />
-            )}
-          </div>
-          <div className="arrow">{"->"}</div>
-        </>,
-      ]);
+      setGuessedSongs((prevGuessedSongs) => [...prevGuessedSongs, currentSong]);
     }
   }, [currentSong]);
 
@@ -139,56 +128,8 @@ function App() {
         </div>
 
         <hr />
-        <div className="game-options-container">
-          <motion.div
-            whileHover={{ scale: 1.1, backgroundColor: "#494949" }}
-            whileTap={{ scale: 0.9, backgroundColor: "#999999" }}
-            className="button-border game-options"
-            onMouseUp={toggleMotifs}
-          >
-            {" "}
-            Show Motifs?{" "}
-          </motion.div>
-          <div className="difficulty-container">
-            <div className="game-option">Difficulty:</div>
-            <motion.div
-              whileHover={{ scale: 1.1, backgroundColor: "#494949" }}
-              whileTap={{ scale: 0.9, backgroundColor: "#999999" }}
-              className="button-border game-options"
-              onMouseUp={() => {
-                setDifficulty(2);
-                newGame();
-              }}
-            >
-              {" "}
-              Easy{" "}
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.1, backgroundColor: "#494949" }}
-              whileTap={{ scale: 0.9, backgroundColor: "#999999" }}
-              className="button-border game-options"
-              onMouseUp={() => {
-                setDifficulty(3);
-                newGame();
-              }}
-            >
-              {" "}
-              Medium{" "}
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.1, backgroundColor: "#494949" }}
-              whileTap={{ scale: 0.9, backgroundColor: "#999999" }}
-              className="button-border game-options"
-              onMouseUp={() => {
-                setDifficulty(4);
-                newGame();
-              }}
-            >
-              {" "}
-              Hard{" "}
-            </motion.div>
-          </div>
-        </div>
+        <GameOptions onToggleMotifs={toggleMotifs} />
+
         {wonGame && (
           <>
             <div className="win-text">YOU WIN!!!</div>
@@ -207,11 +148,19 @@ function App() {
         )}
         <div className="song-container">
           <dev className="motif-container">
-            <SongBox song={startSong} />
-            {startSong && showMotifs && <MotifList motifs={startSong.motifs} />}
+            <SongBox song={startSong} showMotifs={showMotifs} />
           </dev>
           <div className="arrow">{"->"}</div>
-          {guessedSongs}
+          {guessedSongs.map((song) => {
+            return (
+              <>
+                <div className="motif-container">
+                  <SongBox song={song} showMotifs={showMotifs} />
+                </div>
+                <div className="arrow">{"->"}</div>
+              </>
+            );
+          })}
           {!wonGame && (
             <>
               <GuessBox />
@@ -219,8 +168,7 @@ function App() {
             </>
           )}
           <dev className="motif-container">
-            <SongBox song={endSong} />
-            {endSong && showMotifs && <MotifList motifs={endSong.motifs} />}
+            <SongBox song={endSong} showMotifs={showMotifs} />
           </dev>
         </div>
         <div className="song-guess-container">

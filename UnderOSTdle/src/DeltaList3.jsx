@@ -205,7 +205,7 @@ const DeltaList3 = [
   {
     id: 38,
     name: "BURNING EYES",
-    motifs: ["Black Knife", "Power of NEO", "Lancer"],
+    motifs: ["Black Knife", "Power Of NEO", "Lancer"],
     url: "https://www.youtube.com/watch?v=TBVteb9Z6ps&list=PLKXdyINOQYsaHwm4rJ0QDFzsaZQNQjF0U&index=38",
     game: "D34",
   },

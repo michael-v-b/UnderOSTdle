@@ -254,7 +254,7 @@ const DeltaList2 = [
   {
     id: 39,
     name: "BIG SHOT",
-    motifs: ["Spamton", "BIG SHOT", "Dummy!", "Freedom Motif", "Power of NEO"],
+    motifs: ["Spamton", "BIG SHOT", "Dummy!", "Freedom Motif", "Power Of NEO"],
     url: "https://www.youtube.com/watch?v=V31PVkwzpEY&list=PLKXdyINOQYsbMHB5JF-mqNQOb-8WD0iDq&index=39",
     game: "D2",
   },
