@@ -5,7 +5,7 @@ import GuessBox from "./GuessBox.jsx";
 import GameOptions from "./GameOptions.jsx";
 import SongBox from "./SongBox.jsx";
 import SongGuesser from "./SongGuesser.jsx";
-import MotifList from "./MotifList.jsx";
+import WinScreen from "./WinScreen.jsx";
 import "./App.css";
 
 function App() {
@@ -131,22 +131,8 @@ function App() {
         <hr />
         <GameOptions onToggleMotifs={toggleMotifs} />
 
-        {wonGame && (
-          <>
-            <div className="win-text">YOU WIN!!!</div>
-          </>
-        )}
+        {wonGame && <WinScreen newGame={newGame} />}
 
-        {(wonGame || solutionVisible) && (
-          <motion.div
-            className="play-again"
-            whileHover={{ scale: 1.1, backgroundColor: "#494949" }}
-            whileTap={{ scale: 0.9, backgroundColor: "#999999" }}
-            onMouseUp={newGame}
-          >
-            Play Again?
-          </motion.div>
-        )}
         <div className="song-container">
           <div className="motif-container">
             <SongBox song={startSong} showMotifs={showMotifs} />
