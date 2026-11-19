@@ -129,9 +129,13 @@ function App() {
         </div>
 
         <hr />
-        <GameOptions onToggleMotifs={toggleMotifs} />
+        <GameOptions
+          onToggleMotifs={toggleMotifs}
+          difficulty={difficulty}
+          setDifficulty={setDifficulty}
+        />
 
-        {wonGame || (true && <WinScreen newGame={newGame} />)}
+        {wonGame && <WinScreen newGame={newGame} />}
 
         <div className="song-container">
           <div className="motif-container">

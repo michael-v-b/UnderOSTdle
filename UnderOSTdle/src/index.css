@@ -92,7 +92,7 @@ p {
   margin: 0;
 }
 hr {
-  width:80vw;
+  width: var(--game-size);
   margin-bottom:2vh;
 }
 
