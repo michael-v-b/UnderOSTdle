@@ -12,6 +12,7 @@
   "dependencies": {
     "framer-motion": "^14.14.0",
     "react": "^19.3.1",
+    "react-confetti": "^6.4.0",
     "react-dom": "^19.3.1",
     "react-player": "^3.4.0",
     "react-youtube": "^10.1.0"

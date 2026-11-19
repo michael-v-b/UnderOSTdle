@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
+import Confetti from "react-confetti";
+
 const WinScreen = ({ newGame }) => {
   return (
     <>
+      <Confetti />
       <div className="win-text">YOU WIN!!!</div>
       <motion.div
         className="play-again"

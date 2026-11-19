@@ -131,7 +131,7 @@ function App() {
         <hr />
         <GameOptions onToggleMotifs={toggleMotifs} />
 
-        {wonGame && <WinScreen newGame={newGame} />}
+        {wonGame || (true && <WinScreen newGame={newGame} />)}
 
         <div className="song-container">
           <div className="motif-container">
