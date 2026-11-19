@@ -4,6 +4,7 @@ import SongManager from "./SongManager.jsx";
 import GuessBox from "./GuessBox.jsx";
 import GameOptions from "./GameOptions.jsx";
 import SongBox from "./SongBox.jsx";
+import SongGuesser from "./SongGuesser.jsx";
 import MotifList from "./MotifList.jsx";
 import "./App.css";
 
@@ -147,9 +148,9 @@ function App() {
           </motion.div>
         )}
         <div className="song-container">
-          <dev className="motif-container">
+          <div className="motif-container">
             <SongBox song={startSong} showMotifs={showMotifs} />
-          </dev>
+          </div>
           <div className="arrow">{"->"}</div>
           {guessedSongs.map((song) => {
             return (
@@ -167,40 +168,19 @@ function App() {
               <div className="arrow">{"->"}</div>
             </>
           )}
-          <dev className="motif-container">
+          <div className="motif-container">
             <SongBox song={endSong} showMotifs={showMotifs} />
-          </dev>
-        </div>
-        <div className="song-guess-container">
-          <input
-            className="song-input"
-            placeholder="Enter a song"
-            value={songGuess}
-            onChange={(event) => {
-              setSongGuess(event.target.value);
-              setNotNeighbor(false);
-              setNotSong(false);
-            }}
-          ></input>
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9, backgroundColor: "#6b6b6b" }}
-            onMouseUp={handleSubmit}
-            className="submit-button"
-          >
-            Submit
-          </motion.div>
-        </div>
-        {notSong && (
-          <div className="error-message">
-            * {songGuess} is not a song in Undertale or Deltarune
           </div>
-        )}
-        {notNeighbor && (
-          <div className="error-message">
-            * {songGuess} does not share any motifs with {currentSong.name}
-          </div>
-        )}
+        </div>
+        <SongGuesser
+          onSubmit={handleSubmit}
+          onSongGuess={setSongGuess}
+          songGuess={songGuess}
+          notSong={notSong}
+          notNeighbor={notNeighbor}
+          setNotNeighbor={setNotNeighbor}
+          setNotSong={setNotSong}
+        />
       </div>
     </>
   );
