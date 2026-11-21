@@ -4,7 +4,7 @@ const TitleBar = () => {
       <div className="title-bar">
         <div />
         <div className="title">Deltatune</div>
-        <div>droppdown</div>
+        <div />
       </div>
     </>
   );
