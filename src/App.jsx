@@ -83,7 +83,7 @@ function App() {
 
   function newGame() {
     var songs;
-    songs = SongManagerRef.current.getSongs(difficulty);
+    songs = SongManagerRef.current.getSongs(endlessMode, difficulty);
     setStartSong(songs[0]);
     setEndScreen(false);
     setCurrentSong(songs[0]);

@@ -1,4 +1,5 @@
 import { useRef, forwardRef, useImperativeHandle } from "react";
+import seedrandom from "seedrandom";
 import Song from "./Song.jsx";
 import UndertaleList from "./UndertaleList.jsx";
 import DeltaList1 from "./DeltaList1.jsx";
@@ -51,9 +52,11 @@ const SongManager = forwardRef(({}, ref) => {
   }
 
   //returns a random song that is that distance away
-  function findSongWithDistance(startSong, distance) {
+  function findSongWithDistance(endlessMode, startSong, distance) {
     const songLibrarby = songLibrarbyRef.current;
     const motifsLibrarby = motifsLibrarbyRef.current;
+    var dateString = new Date().toLocaleDateString();
+    var dailyrng = seedrandom(dateString);
     //break if start song is not present
     if (!songLibrarby.has(startSong)) {
       console.log("has niether of the songs");
@@ -92,7 +95,13 @@ const SongManager = forwardRef(({}, ref) => {
         }
       }
     }
-    outputSongIndex = Math.floor(Math.random() * songQueue.length);
+
+    if (endlessMode) {
+      outputSongIndex = Math.floor(Math.random() * songQueue.length);
+    } else {
+      console.log("daily mode");
+      outputSongIndex = Math.floor(dailyrng() * songQueue.length);
+    }
     resetSongs();
     return [songQueue[outputSongIndex], path];
   }
@@ -129,12 +138,19 @@ const SongManager = forwardRef(({}, ref) => {
     return motifsLibrarbyRef;
   }
 
-  function getSongs(distance) {
+  function getSongs(endlessMode, distance) {
+    var dateString = new Date().toLocaleDateString();
+    var dailyrng = seedrandom(dateString);
     const songLibrarby = songLibrarbyRef.current;
     const songNames = Array.from(songLibrarby.keys());
-    var index = Math.floor(Math.random() * songNames.length);
+    var index;
+    if (endlessMode) {
+      index = Math.floor(Math.random() * songNames.length);
+    } else {
+      index = Math.floor(dailyrng() * songNames.length);
+    }
     var song1 = songNames[index];
-    var song2AndPath = findSongWithDistance(song1, distance);
+    var song2AndPath = findSongWithDistance(endlessMode, song1, distance);
     return [getSong(song1), song2AndPath[0], song2AndPath[1]];
   }
 
