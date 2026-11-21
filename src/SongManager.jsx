@@ -141,12 +141,18 @@ const SongManager = forwardRef(({}, ref) => {
   function getSongs(endlessMode, distance) {
     var dateString = new Date().toLocaleDateString();
     var dailyrng = seedrandom(dateString);
+    const maxDifficulty = 5;
+    const minDifficulty = 2;
+    var newDifficulty = distance;
     const songLibrarby = songLibrarbyRef.current;
     const songNames = Array.from(songLibrarby.keys());
     var index;
     if (endlessMode) {
       index = Math.floor(Math.random() * songNames.length);
     } else {
+      distance =
+        Math.floor(dailyrng() * (maxDifficulty - minDifficulty)) +
+        minDifficulty;
       index = Math.floor(dailyrng() * songNames.length);
     }
     var song1 = songNames[index];
