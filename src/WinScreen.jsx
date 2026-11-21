@@ -9,8 +9,13 @@ const WinScreen = ({
   setEndlessMode,
   endlessMode,
   wonDaily,
+  onRandom,
+  setDifficulty,
 }) => {
   const [showSolution, setShowSolution] = useState(false);
+
+  const MAX_DIFFICULTY = 5;
+  const MIN_DIFFICULTY = 2;
   return (
     <>
       {wonGame && <Confetti />}
@@ -68,7 +73,17 @@ const WinScreen = ({
             className="play-again"
             whileHover={{ scale: 1.1, backgroundColor: "#494949" }}
             whileTap={{ scale: 0.9, backgroundColor: "#999999" }}
-            onMouseUp={newGame}
+            onMouseUp={() => {
+              if (onRandom) {
+                var tempDiff =
+                  Math.floor(
+                    Math.random() * (MAX_DIFFICULTY - MIN_DIFFICULTY),
+                  ) + MIN_DIFFICULTY;
+                setDifficulty(tempDiff);
+              } else {
+                newGame();
+              }
+            }}
           >
             Play Again?
           </motion.div>

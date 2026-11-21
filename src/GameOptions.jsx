@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-
 const GameOptions = ({
   onToggleMotifs,
   showMotifs,
@@ -7,7 +6,11 @@ const GameOptions = ({
   setDifficulty,
   setEndScreen,
   endlessMode,
+  onRandom,
+  setRandom,
 }) => {
+  const MAX_DIFFICULTY = 5;
+  const MIN_DIFFICULTY = 2;
   return (
     <>
       <div className="game-options-container">
@@ -23,39 +26,59 @@ const GameOptions = ({
           </motion.div>
           {endlessMode && (
             <>
-              <div className="game-option">Difficulty:</div>
+              <div className="game-option">Songs To Guess:</div>
               <motion.div
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className={`button-border game-options ${difficulty == 2 ? "selected" : ""}`}
+                className={`button-border game-options ${difficulty == 2 && !onRandom ? "selected" : ""}`}
                 onMouseUp={() => {
                   setDifficulty(2);
+                  setRandom(false);
                 }}
               >
                 {" "}
-                Easy{" "}
+                1{" "}
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className={`button-border game-options ${difficulty == 3 ? "selected" : ""}`}
+                className={`button-border game-options ${difficulty == 3 && !onRandom ? "selected" : ""}`}
                 onMouseUp={() => {
                   setDifficulty(3);
+                  setRandom(false);
                 }}
               >
                 {" "}
-                Medium{" "}
+                2{" "}
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className={`button-border game-options ${difficulty == 4 ? "selected" : ""}`}
+                className={`button-border game-options ${difficulty == 4 && !onRandom ? "selected" : ""}`}
                 onMouseUp={() => {
                   setDifficulty(4);
+                  setRandom(false);
                 }}
               >
                 {" "}
-                Hard{" "}
+                3{" "}
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className={`button-border game-options ${onRandom ? "selected" : ""}`}
+                onMouseUp={() => {
+                  var tempDiff =
+                    Math.floor(
+                      Math.random() * (MAX_DIFFICULTY - MIN_DIFFICULTY),
+                    ) + MIN_DIFFICULTY;
+                  setDifficulty(tempDiff);
+                  setRandom(true);
+                }}
+              >
+                {" "}
+                Random{" "}
               </motion.div>
             </>
           )}

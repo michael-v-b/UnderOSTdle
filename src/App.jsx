@@ -25,6 +25,7 @@ function App() {
   const [endScreen, setEndScreen] = useState(false);
   const [endlessMode, setEndlessMode] = useState(false);
   const [wonDaily, setWonDaily] = useState(false);
+  const [onRandom, setRandom] = useState(false);
 
   const SongManagerRef = useRef(null);
 
@@ -127,15 +128,20 @@ function App() {
           setDifficulty={setDifficulty}
           setEndScreen={setEndScreen}
           endlessMode={endlessMode}
+          onRandom={onRandom}
+          setRandom={setRandom}
         />
 
         {(wonGame || endScreen) && (
           <WinScreen
             newGame={newGame}
             wonGame={wonGame}
+            wonDaily={wonDaily}
             solution={solution}
             setEndlessMode={setEndlessMode}
             endlessMode={endlessMode}
+            onRandom={onRandom}
+            setDifficulty={setDifficulty}
           />
         )}
 
