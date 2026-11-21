@@ -1,11 +1,11 @@
 import { useRef, forwardRef, useImperativeHandle } from "react";
 import seedrandom from "seedrandom";
 import Song from "./Song.jsx";
-import UndertaleList from "./UndertaleList.jsx";
-import DeltaList1 from "./DeltaList1.jsx";
-import DeltaList2 from "./DeltaList2.jsx";
-import DeltaList3 from "./DeltaList3.jsx";
-import DeltaList5 from "./DeltaList5.jsx";
+import UndertaleList from "./SongLists/UndertaleList.jsx";
+import DeltaList1 from "./SongLists/DeltaList1.jsx";
+import DeltaList2 from "./SongLists/DeltaList2.jsx";
+import DeltaList3 from "./SongLists/DeltaList3.jsx";
+import DeltaList5 from "./SongLists/DeltaList5.jsx";
 const SongManager = forwardRef(({}, ref) => {
   const songLibrarbyRef = useRef(new Map());
   const motifsLibrarbyRef = useRef(new Map());

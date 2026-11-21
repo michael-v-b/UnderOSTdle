@@ -1,18 +1,19 @@
 import { motion } from "framer-motion";
 import Confetti from "react-confetti";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 const WinScreen = ({
   newGame,
   wonGame,
   solution,
-  setEndlessMode,
-  endlessMode,
   wonDaily,
   onRandom,
   setDifficulty,
+  mode,
 }) => {
   const [showSolution, setShowSolution] = useState(false);
+  const navigate = useNavigate();
 
   const MAX_DIFFICULTY = 5;
   const MIN_DIFFICULTY = 2;
@@ -42,33 +43,33 @@ const WinScreen = ({
             })}
           </div>
         )}
-        {endlessMode && !wonDaily && (
+        {mode == "endless" && (
           <>
             <motion.div
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               className="button-border win-button"
               onMouseUp={() => {
-                setEndlessMode(false);
+                navigate("/");
               }}
             >
               Play Daily?
             </motion.div>
           </>
         )}
-        {!endlessMode && (
+        {mode == "daily" && (
           <motion.div
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             className="button-border win-button"
             onMouseUp={() => {
-              setEndlessMode(true);
+              navigate("/endless");
             }}
           >
             Endless Mode?
           </motion.div>
         )}
-        {endlessMode && (
+        {mode == "endless" && (
           <motion.div
             className="play-again"
             whileHover={{ scale: 1.1, backgroundColor: "#494949" }}
