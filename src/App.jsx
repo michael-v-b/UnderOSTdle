@@ -6,12 +6,12 @@ import GameOptions from "./GameOptions.jsx";
 import SongBox from "./SongBox.jsx";
 import SongGuesser from "./SongGuesser.jsx";
 import WinScreen from "./WinScreen.jsx";
+import TitleBar from "./TitleBar.jsx";
 import "./App.css";
 
 function App() {
   const [startSong, setStartSong] = useState("");
   const [endSong, setEndSong] = useState("");
-  const [songPath, setSongPath] = useState([]);
   const [currentSong, setCurrentSong] = useState("");
   const [songGuess, setSongGuess] = useState("");
   const [wonGame, setWonGame] = useState(false);
@@ -23,6 +23,8 @@ function App() {
   const [showMotifs, setShowMotifs] = useState(false);
   const [solution, setSolution] = useState([]);
   const [endScreen, setEndScreen] = useState(false);
+  const [endlessMode, setEndlessMode] = useState(false);
+  const [wonDaily, setWonDaily] = useState(false);
 
   const SongManagerRef = useRef(null);
 
@@ -73,6 +75,9 @@ function App() {
 
     if (finalResult) {
       setWonGame(true);
+      if (!endlessMode) {
+        setWonDaily(true);
+      }
     }
   };
 
@@ -83,7 +88,6 @@ function App() {
     setEndScreen(false);
     setCurrentSong(songs[0]);
     setEndSong(songs[1]);
-    setSongPath(songs[2]);
     setGuessedSongs([]);
     setWonGame(false);
     setSongGuess("");
@@ -103,10 +107,10 @@ function App() {
 
   return (
     <>
+      <TitleBar />
       <div className="page-container">
         <SongManager ref={SongManagerRef} />
         <div>
-          <h1>deltatune</h1>
           <p className="instruction">
             Connect the 2 Undertale/Deltarune songs using their shared motifs!
           </p>
@@ -115,12 +119,15 @@ function App() {
         <div className="instruction-header">Songs to Connect:</div>
 
         <hr />
+        {!endlessMode && <div className="game-type">Daily Game</div>}
+        {endlessMode && <div className="game-type">Endless Mode</div>}
         <GameOptions
           onToggleMotifs={toggleMotifs}
           showMotifs={showMotifs}
           difficulty={difficulty}
           setDifficulty={setDifficulty}
           setEndScreen={setEndScreen}
+          endlessMode={endlessMode}
         />
 
         {wonGame ||
@@ -129,6 +136,8 @@ function App() {
               newGame={newGame}
               wonGame={wonGame}
               solution={solution}
+              setEndlessMode={setEndlessMode}
+              endlessMode={endlessMode}
             />
           ))}
 

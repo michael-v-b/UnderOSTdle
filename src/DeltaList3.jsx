@@ -289,21 +289,21 @@ const DeltaList3 = [
   {
     id: 51,
     name: "Gyaa Ha ha!",
-    motifs: ["Undyne", "Ruins", "Gerson"],
+    motifs: ["Spear of Justice", "Ruins", "Gerson"],
     url: "https://www.youtube.com/watch?v=iqoYq4x0RQw&list=PLKXdyINOQYsaHwm4rJ0QDFzsaZQNQjF0U&index=51",
     game: "D34",
   },
   {
     id: 51,
     name: "Gyaa Ha ha!",
-    motifs: ["Undyne", "Ruins", "Gerson"],
+    motifs: ["Spear of Justice", "Ruins", "Gerson"],
     url: "https://www.youtube.com/watch?v=iqoYq4x0RQw&list=PLKXdyINOQYsaHwm4rJ0QDFzsaZQNQjF0U&index=51",
     game: "D34",
   },
   {
     id: 52,
     name: "Fireplace",
-    motifs: ["Undyne", "Ruins"],
+    motifs: ["Spear of Justice", "Ruins"],
     url: "https://www.youtube.com/watch?v=xz61v-lss5g&list=PLKXdyINOQYsaHwm4rJ0QDFzsaZQNQjF0U&index=52",
     game: "D34",
   },
@@ -338,7 +338,7 @@ const DeltaList3 = [
   {
     id: 58,
     name: "Hammer of Justice",
-    motifs: ["Undyne", "Gerson", "Ruins", "Freedom Motif"],
+    motifs: ["Spear of Justice", "Gerson", "Ruins", "Freedom Motif"],
     url: "https://www.youtube.com/watch?v=tBdLO8u-0L8&list=PLKXdyINOQYsaHwm4rJ0QDFzsaZQNQjF0U&index=58",
     game: "D34",
   },
@@ -408,7 +408,7 @@ const DeltaList3 = [
   {
     id: 69,
     name: "Need a hand?",
-    motifs: ["Gerson", "Undyne", "Ruins"],
+    motifs: ["Gerson", "Spear of Justice", "Ruins"],
     url: "https://www.youtube.com/watch?v=hFYTL3mTsdo&list=PLKXdyINOQYsaHwm4rJ0QDFzsaZQNQjF0U&index=69",
     game: "D34",
   },

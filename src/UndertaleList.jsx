@@ -142,7 +142,7 @@ const UndertaleList = [
   {
     id: 26,
     name: "Dating Tense",
-    motifs: ["Undyne"],
+    motifs: ["Spear of Justice"],
     url: "https://www.youtube.com/watch?v=j0O3RFCzI_A&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=26",
     game: "U",
   },
@@ -163,7 +163,7 @@ const UndertaleList = [
   {
     id: 30,
     name: "Undyne",
-    motifs: ["Undyne"],
+    motifs: ["Spear of Justice"],
     url: "https://www.youtube.com/watch?v=rBR_IvHe3Xg&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=30",
     game: "U",
   },
@@ -177,7 +177,7 @@ const UndertaleList = [
   {
     id: 32,
     name: "Run!",
-    motifs: ["Undyne"],
+    motifs: ["Spear of Justice"],
     url: "https://www.youtube.com/watch?v=XLxNMt-2qMU&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=32",
     game: "U",
   },
@@ -247,14 +247,14 @@ const UndertaleList = [
   {
     id: 45,
     name: "NGAH!!",
-    motifs: ["Undyne", "Ruins"],
+    motifs: ["Spear of Justice", "Ruins"],
     url: "https://www.youtube.com/watch?v=IpShDXqs74Q&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=45",
     game: "U",
   },
   {
     id: 46,
     name: "Spear of Justice",
-    motifs: ["Undyne", "Ruins"],
+    motifs: ["Spear of Justice", "Ruins"],
     url: "https://www.youtube.com/watch?v=XGzYhJcm-Jw&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=46",
     game: "U",
   },
@@ -401,7 +401,7 @@ const UndertaleList = [
   {
     id: 77,
     name: "ASGORE",
-    motifs: ["Asgore", "Heartache", "Undyne", "Determination"],
+    motifs: ["Asgore", "Heartache", "Spear of Justice", "Determination"],
     url: "https://www.youtube.com/watch?v=42kI2lT0x6U&list=PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx&index=77",
     game: "U",
   },
@@ -522,7 +522,7 @@ const UndertaleList = [
       "Sans",
       "Papyrus",
       "Snowdin",
-      "Undyne",
+      "Spear of Justice",
       "Another Medium",
       "CORE",
       "Asgore",

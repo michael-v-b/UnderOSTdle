@@ -36,8 +36,8 @@
     align-items:center;
     position:fixed;
     background-color:black;
-    margin-top:25vh;
-    height:60vh;
+    margin-top:10vh;
+    height:65vh;
     width:50vh;
     padding-top:5vh;
     border-style:solid;
@@ -194,7 +194,7 @@
     width:85%;
     margin-bottom:3vh;
 }
-.answer-reveal-button{
+.win-button{
     font-size:3vh;
     padding:1vh;
 }
@@ -207,4 +207,23 @@
 }
 .solution-song{
     text-decoration:underline;
+}
+.title-bar{
+    height:8vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background-color:black;
+    border-style:solid;
+    border-width:0px 0px 4px 0px;
+    border-color:white;
+}
+.title{
+    color:white;
+    font-size:5vh;
+}
+.game-type{
+    font-size:4vh;
+    text-decoration:underline;
+    margin-bottom:3vh;
 }
