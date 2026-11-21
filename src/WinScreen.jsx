@@ -2,13 +2,13 @@ import { motion } from "framer-motion";
 import Confetti from "react-confetti";
 import { useState } from "react";
 
-const WinScreen = ({ newGame, solution }) => {
+const WinScreen = ({ newGame, wonGame, solution }) => {
   const [showSolution, setShowSolution] = useState(false);
   return (
     <>
-      <Confetti />
+      {wonGame && <Confetti />}
       <div className="win-text-container">
-        <div className="win-text">YOU WIN!!!</div>
+        {wonGame && <div className="win-text">YOU WIN!!!</div>}
         <div className="answer-reveal-container">
           <div className="answer">Shortest Solution: {solution.length}</div>
           <motion.div

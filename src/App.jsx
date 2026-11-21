@@ -22,6 +22,7 @@ function App() {
   const [notNeighbor, setNotNeighbor] = useState(false);
   const [showMotifs, setShowMotifs] = useState(false);
   const [solution, setSolution] = useState([]);
+  const [endScreen, setEndScreen] = useState(false);
 
   const SongManagerRef = useRef(null);
 
@@ -79,6 +80,7 @@ function App() {
     var songs;
     songs = SongManagerRef.current.getSongs(difficulty);
     setStartSong(songs[0]);
+    setEndScreen(false);
     setCurrentSong(songs[0]);
     setEndSong(songs[1]);
     setSongPath(songs[2]);
@@ -115,11 +117,20 @@ function App() {
         <hr />
         <GameOptions
           onToggleMotifs={toggleMotifs}
+          showMotifs={showMotifs}
           difficulty={difficulty}
           setDifficulty={setDifficulty}
+          setEndScreen={setEndScreen}
         />
 
-        {wonGame && <WinScreen newGame={newGame} solution={solution} />}
+        {wonGame ||
+          (endScreen && (
+            <WinScreen
+              newGame={newGame}
+              wonGame={wonGame}
+              solution={solution}
+            />
+          ))}
 
         <div className="song-container">
           <div className="motif-container">

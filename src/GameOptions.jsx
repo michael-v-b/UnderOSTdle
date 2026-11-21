@@ -1,19 +1,25 @@
 import { motion } from "framer-motion";
 
-const GameOptions = ({ onToggleMotifs, difficulty, setDifficulty }) => {
+const GameOptions = ({
+  onToggleMotifs,
+  showMotifs,
+  difficulty,
+  setDifficulty,
+  setEndScreen,
+}) => {
   return (
     <>
       <div className="game-options-container">
-        <motion.div
-          whileHover={{ scale: 1.1, backgroundColor: "#494949" }}
-          whileTap={{ scale: 0.9, backgroundColor: "#999999" }}
-          className="button-border game-options"
-          onMouseUp={onToggleMotifs}
-        >
-          {" "}
-          Show Motifs?{" "}
-        </motion.div>
         <div className="difficulty-container">
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className={`button-border game-options show-motifs ${showMotifs ? "selected" : ""}`}
+            onMouseUp={onToggleMotifs}
+          >
+            {" "}
+            Show Motifs{" "}
+          </motion.div>
           <div className="game-option">Difficulty:</div>
           <motion.div
             whileHover={{ scale: 1.1 }}
@@ -49,6 +55,16 @@ const GameOptions = ({ onToggleMotifs, difficulty, setDifficulty }) => {
             Hard{" "}
           </motion.div>
         </div>
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          onMouseUp={() => {
+            setEndScreen(true);
+          }}
+          className="button-border game-options"
+        >
+          Show Solution
+        </motion.div>
       </div>
     </>
   );

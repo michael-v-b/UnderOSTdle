@@ -73,7 +73,7 @@ const DeltaList3 = [
     id: 11,
     name: "Physical Challenge",
     motifs: ["Tenna"],
-    url: "https://www.youtube.com/watch?v=N117e1Ub39A&list=PLKXdyINOQYsaHwm4rJ0QDFzsaZQNQjF0U&index=11",
+    url: "https://www.youtube.com/watch?v=EfUKZ3_se3M",
     game: "D34",
   },
   {
