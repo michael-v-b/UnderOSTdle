@@ -7,8 +7,6 @@ const SongBox = ({ song, showMotifs }) => {
         <div className="song-box-text">{song.name}</div>
         <ReactPlayer
           className="song-box-video"
-          height="10vh"
-          width="10vh"
           src={song.url}
           controls={true}
         />
