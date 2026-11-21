@@ -45,7 +45,6 @@ const WinScreen = ({
               className="button-border win-button"
               onMouseUp={() => {
                 setEndlessMode(false);
-                newGame();
               }}
             >
               Play Daily?
@@ -59,8 +58,6 @@ const WinScreen = ({
             className="button-border win-button"
             onMouseUp={() => {
               setEndlessMode(true);
-              newGame();
-              console.log("new game");
             }}
           >
             Endless Mode?

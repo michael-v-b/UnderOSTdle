@@ -38,7 +38,7 @@ function App() {
     if (graphBuilt) {
       newGame();
     }
-  }, [difficulty, graphBuilt]);
+  }, [difficulty, graphBuilt, endlessMode]);
 
   useEffect(() => {
     if (currentSong && currentSong != startSong) {
