@@ -112,7 +112,11 @@ function App() {
         <SongManager ref={SongManagerRef} />
         <div>
           <p className="instruction">
-            Connect the 2 Undertale/Deltarune songs using their shared motifs!
+            <div>
+              Connect the 2 Undertale/Deltarune songs using their shared motifs!
+              This can take multiple songs
+            </div>
+            <div>It may take multiple songs to connect the 2</div>
           </p>
         </div>
 
