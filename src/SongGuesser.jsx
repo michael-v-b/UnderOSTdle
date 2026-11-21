@@ -8,6 +8,7 @@ const SongGuesser = ({
   notNeighbor,
   setNotNeighbor,
   setNotSong,
+  currentSong,
 }) => {
   return (
     <>

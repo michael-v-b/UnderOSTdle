@@ -154,6 +154,7 @@ function App() {
           notNeighbor={notNeighbor}
           setNotNeighbor={setNotNeighbor}
           setNotSong={setNotSong}
+          currentSong={currentSong}
         />
       </div>
     </>
