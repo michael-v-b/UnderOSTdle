@@ -3,7 +3,7 @@ const DeltaList2 = [
     id: 1,
     name: "Faint Glow",
     motifs: ["Don't Forget"],
-    url: "https://www.youtube.com/watch?v=mHOkkDmsTvo&list=PLKXdyINOQYsbroHtsNBW6OJaNZKLh8lf6",
+    url: "https://www.youtube.com/watch?v=J0sZRB3KI3s",
     game: "D2",
   },
   {
