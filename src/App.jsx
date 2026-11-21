@@ -20,8 +20,8 @@ function App() {
   const [graphBuilt, setBuilt] = useState(false);
   const [notSong, setNotSong] = useState(false);
   const [notNeighbor, setNotNeighbor] = useState(false);
-  const [solutionVisible, setSolutionVisible] = useState(false);
   const [showMotifs, setShowMotifs] = useState(false);
+  const [solution, setSolution] = useState([]);
 
   const SongManagerRef = useRef(null);
 
@@ -70,7 +70,6 @@ function App() {
       endSong.name,
     );
 
-    console.log("finalResult: " + finalResult);
     if (finalResult) {
       setWonGame(true);
     }
@@ -85,20 +84,17 @@ function App() {
     setSongPath(songs[2]);
     setGuessedSongs([]);
     setWonGame(false);
-    setSolutionVisible(false);
     setSongGuess("");
     setShowMotifs(false);
+    setSolution(
+      SongManagerRef.current.getSolution(
+        songs[2],
+        songs[0].name,
+        songs[1].name,
+      ),
+    );
   }
 
-  function showSolution() {
-    const solution = SongManagerRef.current.getSolution(
-      songPath,
-      startSong.name,
-      endSong.name,
-    );
-    setSolutionVisible(true);
-    console.log(solution);
-  }
   function toggleMotifs() {
     setShowMotifs(!showMotifs);
   }
@@ -116,18 +112,6 @@ function App() {
 
         <div className="instruction-header">Songs to Connect:</div>
 
-        <div className="show-solution-container">
-          <motion.div
-            whileHover={{ scale: 1.1, backgroundColor: "#494949" }}
-            whileTap={{ scale: 0.9, backgroundColor: "#999999" }}
-            className="button-border show-solution"
-            onMouseUp={showSolution}
-          >
-            {" "}
-            Show Solution?{" "}
-          </motion.div>
-        </div>
-
         <hr />
         <GameOptions
           onToggleMotifs={toggleMotifs}
@@ -135,7 +119,7 @@ function App() {
           setDifficulty={setDifficulty}
         />
 
-        {wonGame && <WinScreen newGame={newGame} />}
+        {wonGame && <WinScreen newGame={newGame} solution={solution} />}
 
         <div className="song-container">
           <div className="motif-container">

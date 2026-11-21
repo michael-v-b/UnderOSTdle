@@ -28,8 +28,23 @@
 .show-solution {
     padding:1vh;
     font-size:3vh;
-    border-radius:15px;
     margin-right:3vh;
+}
+.win-text-container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    position:fixed;
+    background-color:black;
+    margin-top:25vh;
+    height:60vh;
+    width:50vh;
+    padding-top:5vh;
+    border-style:solid;
+    border-color:white;
+    border-width:4px;
+    font-size:3vh;
+
 }
 .win-text {
     font-size:6vh;
@@ -40,9 +55,8 @@
 .play-again {
     color:white;
     border-style:solid;
-    border-width:2px;
+    border-width:4px;
     border-color:white;
-    border-radius:25px;
     font-size:3vh;
     padding:1vh;
     margin:2vh;
@@ -59,16 +73,14 @@
 }
 .song-box{
     width:35vh;
-    height:40vh;
+    height:35vh;
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
     border-color:white;
-    border-width:2px;
+    border-width:4px;
     border-style:solid;
-    border-radius:100px;
-    
     padding-right:5vh;
     padding-left:5vh;
 }
@@ -86,15 +98,13 @@
     width:30vh;
     height:35vh;
     font-size:20vh;
-    border-radius:50px;
 }
 .song-input {
     color:white;
     background-color:black;
-    border-radius:50px;
     border-color:white;
     border-style:solid;
-    border-width:2px;
+    border-width:4px;
     height:5vh;
     text-align:center;
     font-size:3vh;
@@ -108,10 +118,9 @@
     display:flex;
     justify-content:center;
     align-items:center;
-    border-radius:15px;
     border-color:white;
     border-style:solid;
-    border-width:2px;
+    border-width:4px;
     color:white;
     font-size:2vh;
     padding:1vh;
@@ -125,8 +134,7 @@
 }
 .button-border {
     border-style:solid;
-    border-width:2px;
-    border-radius:25px;
+    border-width:4px;
 }
 .arrow {
     display:flex;
@@ -174,4 +182,26 @@
 }
 .selected {
     background-color:rgb(84, 84, 84);
+}
+.answer-reveal-container{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    width:85%;
+    margin-bottom:3vh;
+}
+.answer-reveal-button{
+    font-size:3vh;
+    padding:1vh;
+}
+.solution-container{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:3vh;
+}
+.solution-song{
+    text-decoration:underline;
 }
