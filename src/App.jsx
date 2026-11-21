@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { Fragment, useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import SongManager from "./SongManager.jsx";
 import GuessBox from "./GuessBox.jsx";
@@ -104,7 +104,6 @@ function App() {
   function toggleMotifs() {
     setShowMotifs(!showMotifs);
   }
-
   return (
     <>
       <TitleBar />
@@ -130,30 +129,29 @@ function App() {
           endlessMode={endlessMode}
         />
 
-        {wonGame ||
-          (endScreen && (
-            <WinScreen
-              newGame={newGame}
-              wonGame={wonGame}
-              solution={solution}
-              setEndlessMode={setEndlessMode}
-              endlessMode={endlessMode}
-            />
-          ))}
+        {(wonGame || endScreen) && (
+          <WinScreen
+            newGame={newGame}
+            wonGame={wonGame}
+            solution={solution}
+            setEndlessMode={setEndlessMode}
+            endlessMode={endlessMode}
+          />
+        )}
 
         <div className="song-container">
           <div className="motif-container">
             <SongBox song={startSong} showMotifs={showMotifs} />
           </div>
           <div className="arrow">{"->"}</div>
-          {guessedSongs.map((song) => {
+          {guessedSongs.map((song, index) => {
             return (
-              <>
+              <Fragment key={index}>
                 <div className="motif-container">
                   <SongBox song={song} showMotifs={showMotifs} />
                 </div>
                 <div className="arrow">{"->"}</div>
-              </>
+              </Fragment>
             );
           })}
           {!wonGame && (
